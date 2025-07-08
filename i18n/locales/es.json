@@ -1,0 +1,23 @@
+{
+  "hero": {
+    "tagline": "Conserjería de lujo",
+    "title": "Monarch",
+    "services": {
+      "villas": "Villas excepcionales",
+      "vehicles": "Vehículos de lujo",
+      "yachts": "Yates privados",
+      "jets": "Jets privados",
+      "limousines": "Limusinas",
+      "experiences": "Experiencias únicas",
+      "events": "Eventos a medida",
+      "butler": "Servicios de mayordomo"
+    }
+  },
+  "seo": {
+    "title": "Monarch - Conserjería de Lujo",
+    "description": "Monarch, su conserjería de lujo para experiencias excepcionales. Villas, yates, jets privados y servicios personalizados.",
+    "keywords": "conserjería lujo, villas excepcionales, yates privados, jets privados, limusinas, servicios mayordomo",
+    "ogTitle": "Monarch - Conserjería de Lujo",
+    "ogDescription": "Descubra la excelencia con Monarch, su conserjería de lujo"
+  }
+}

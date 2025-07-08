@@ -1,0 +1,23 @@
+{
+  "hero": {
+    "tagline": "Luxury concierge",
+    "title": "Monarch",
+    "services": {
+      "villas": "Exceptional villas",
+      "vehicles": "Luxury vehicles",
+      "yachts": "Private yachts",
+      "jets": "Private jets",
+      "limousines": "Limousines",
+      "experiences": "Unique experiences",
+      "events": "Bespoke events",
+      "butler": "Butler services"
+    }
+  },
+  "seo": {
+    "title": "Monarch - Luxury Concierge",
+    "description": "Monarch, your luxury concierge for exceptional experiences. Villas, yachts, private jets and bespoke services.",
+    "keywords": "luxury concierge, exceptional villas, private yachts, private jets, limousines, butler services",
+    "ogTitle": "Monarch - Luxury Concierge",
+    "ogDescription": "Discover excellence with Monarch, your luxury concierge"
+  }
+}

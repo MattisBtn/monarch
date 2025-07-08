@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+/* Configuration des fonts premium pour Monarch */
+@utility font-playfair {
+  font-family: "Playfair Display", serif;
+}
+
+@utility font-inter {
+  font-family: "Inter", sans-serif;
+}
+
+/* Optimisations pour les fonts de luxe */
+@theme {
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+html {
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

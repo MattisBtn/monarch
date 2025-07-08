@@ -1,0 +1,23 @@
+{
+  "hero": {
+    "tagline": "Conciergerie de luxe",
+    "title": "Monarch",
+    "services": {
+      "villas": "Villas d'exception",
+      "vehicles": "Véhicules de luxe",
+      "yachts": "Yachts privés",
+      "jets": "Jets privés",
+      "limousines": "Limousines",
+      "experiences": "Expériences uniques",
+      "events": "Événements sur mesure",
+      "butler": "Services de majordome"
+    }
+  },
+  "seo": {
+    "title": "Monarch - Conciergerie de Luxe",
+    "description": "Monarch, votre conciergerie de luxe pour des expériences d'exception. Villas, yachts, jets privés et services sur mesure.",
+    "keywords": "conciergerie luxe, villas exception, yachts privés, jets privés, limousines, services majordome",
+    "ogTitle": "Monarch - Conciergerie de Luxe",
+    "ogDescription": "Découvrez l'excellence avec Monarch, votre conciergerie de luxe"
+  }
+}
