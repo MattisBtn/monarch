@@ -47,6 +47,32 @@
                 </div>
             </div>
         </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+            <div class="group cursor-pointer" @click="scrollToDestinations">
+                <div class="flex flex-col items-center gap-2">
+                    <!-- Chevron animé -->
+                    <div class="animate-scroll-float">
+                        <Icon name="lucide:chevron-down"
+                            class="w-6 h-6 text-white/60 group-hover:text-white transition-colors duration-500" />
+                    </div>
+
+                    <!-- Ligne verticale -->
+                    <div
+                        class="w-px h-8 bg-gradient-to-b from-white/60 to-transparent group-hover:from-white transition-colors duration-500">
+                    </div>
+
+                    <!-- Texte subtil -->
+                    <div
+                        class="opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                        <span class="text-white/60 text-xs font-inter font-medium uppercase tracking-widest">
+                            {{ t('hero.scrollToExplore') }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -100,6 +126,17 @@ const stopServiceRotation = () => {
     if (serviceInterval) {
         clearInterval(serviceInterval)
         serviceInterval = null
+    }
+}
+
+// Scroll to destinations section
+const scrollToDestinations = () => {
+    const destinationsSection = document.querySelector('.destinations-section')
+    if (destinationsSection) {
+        destinationsSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        })
     }
 }
 
@@ -172,5 +209,37 @@ onUnmounted(() => {
 .service-change-leave-from {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Scroll indicator animation */
+@keyframes scroll-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translateY(8px);
+        opacity: 1;
+    }
+}
+
+.animate-scroll-float {
+    animation: scroll-float 2s ease-in-out infinite;
+}
+
+/* Respect des préférences d'animation */
+@media (prefers-reduced-motion: reduce) {
+
+    .animate-fade-in,
+    .animate-fade-in-up,
+    .animate-fade-in-up-delay,
+    .animate-scroll-float {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
 }
 </style>

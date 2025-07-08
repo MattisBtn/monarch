@@ -2,6 +2,7 @@
   "hero": {
     "tagline": "Conserjería de lujo",
     "title": "Monarch",
+    "scrollToExplore": "Explorar destinos",
     "services": {
       "villas": "Villas excepcionales",
       "vehicles": "Vehículos de lujo",
@@ -45,6 +46,7 @@
     "services": "servicios",
     "categories": "categorías",
     "availability": "disponibilidad",
+    "scrollToServices": "Explorar servicios",
     "ourServices": "Nuestros Servicios",
     "servicesDescription": "Una selección exclusiva de servicios de lujo para crear su experiencia perfecta",
     "startingFrom": "Desde",

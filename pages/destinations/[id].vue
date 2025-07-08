@@ -59,16 +59,39 @@
                         </div>
                     </div>
 
-                    <!-- Scroll indicator -->
-                    <div class="animate-bounce mt-16">
-                        <Icon name="lucide:chevron-down" class="w-8 h-8 text-white/60 mx-auto" />
-                    </div>
+
                 </div>
             </div>
         </section>
 
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+            <div class="group cursor-pointer" @click="scrollToServices">
+                <div class="flex flex-col items-center gap-2">
+                    <!-- Chevron animé -->
+                    <div class="animate-scroll-float">
+                        <Icon name="lucide:chevron-down"
+                            class="w-6 h-6 text-white/60 group-hover:text-white transition-colors duration-500" />
+                    </div>
+
+                    <!-- Ligne verticale -->
+                    <div
+                        class="w-px h-8 bg-gradient-to-b from-white/60 to-transparent group-hover:from-white transition-colors duration-500">
+                    </div>
+
+                    <!-- Texte subtil -->
+                    <div
+                        class="opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                        <span class="text-white/60 text-xs font-inter font-medium uppercase tracking-widest">
+                            {{ $t('destinations.scrollToServices') }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Services Section -->
-        <section class="py-24 px-6 bg-gradient-to-b from-black via-gray-900 to-black">
+        <section class="services-section py-24 px-6 bg-gradient-to-b from-black via-gray-900 to-black">
             <div class="max-w-7xl mx-auto">
                 <!-- Section Header -->
                 <div class="text-center mb-16">
@@ -293,6 +316,17 @@ const contactConcierge = () => {
     console.log('Contact concierge for', destination.name)
 }
 
+// Scroll to services section
+const scrollToServices = () => {
+    const servicesSection = document.querySelector('.services-section')
+    if (servicesSection) {
+        servicesSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        })
+    }
+}
+
 // SEO
 useHead({
     title: `${destination.name} - ${t('seo.title')}`,
@@ -365,6 +399,38 @@ useHead({
     .animate-fade-in,
     .animate-fade-in-up,
     .animate-fade-in-up-delay {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Scroll indicator animation */
+@keyframes scroll-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translateY(8px);
+        opacity: 1;
+    }
+}
+
+.animate-scroll-float {
+    animation: scroll-float 2s ease-in-out infinite;
+}
+
+/* Respect des préférences d'animation */
+@media (prefers-reduced-motion: reduce) {
+
+    .animate-fade-in,
+    .animate-fade-in-up,
+    .animate-fade-in-up-delay,
+    .animate-scroll-float {
         animation: none;
         opacity: 1;
         transform: none;

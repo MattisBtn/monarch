@@ -1,6 +1,6 @@
 <template>
     <section id="destinations"
-        class="relative py-24 px-6 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
+        class="destinations-section relative py-24 px-6 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
         <!-- Background Pattern -->
         <div class="absolute inset-0 opacity-5">
             <div

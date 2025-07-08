@@ -72,7 +72,26 @@
 </template>
 
 <script setup>
-const scrollToDestinations = () => {
+const route = useRoute()
+const router = useRouter()
+
+const scrollToDestinations = async () => {
+    // Si on n'est pas sur la page d'accueil, naviguer d'abord vers l'accueil
+    if (route.path !== '/') {
+        await navigateTo('/')
+        // Attendre que la navigation soit complète avant de scroll
+        await nextTick()
+        // Petit délai pour s'assurer que le DOM est bien rendu
+        setTimeout(() => {
+            scrollToDestinationsSection()
+        }, 100)
+    } else {
+        // Si on est déjà sur l'accueil, scroll directement
+        scrollToDestinationsSection()
+    }
+}
+
+const scrollToDestinationsSection = () => {
     const destinationsSection = document.getElementById('destinations')
     if (destinationsSection) {
         destinationsSection.scrollIntoView({
