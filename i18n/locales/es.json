@@ -19,5 +19,12 @@
     "keywords": "conserjería lujo, villas excepcionales, yates privados, jets privados, limusinas, servicios mayordomo",
     "ogTitle": "Monarch - Conserjería de Lujo",
     "ogDescription": "Descubra la excelencia con Monarch, su conserjería de lujo"
+  },
+  "menu": {
+    "language": "Idioma",
+    "contact": "Contactanos",
+    "contactSubtitle": "Su conserjería excepcional",
+    "open": "Abrir menú",
+    "close": "Cerrar menú"
   }
 }

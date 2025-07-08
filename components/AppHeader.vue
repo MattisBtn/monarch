@@ -1,7 +1,8 @@
 <template>
-    <header class="fixed top-0 left-0 right-0 z-50 bg-transparent">
+    <header ref="headerRef" class="fixed top-0 left-0 right-0 z-[110] bg-transparent">
         <!-- Container avec padding mobile optimisé -->
-        <nav class="flex items-center justify-between px-4 sm:px-6 lg:px-12 py-4 sm:py-6">
+        <nav class="flex items-center justify-between px-4 sm:px-6 lg:px-12 py-4 sm:py-6 transition-all duration-500"
+            :class="mobileMenuOpen ? 'bg-black/20 backdrop-blur-sm' : 'bg-transparent'">
             <!-- Bouton menu des lieux à gauche -->
             <div class="flex-shrink-0">
                 <LocationButton @click="openLocationsMenu" />
@@ -103,7 +104,7 @@
                 <!-- Hamburger menu optimisé -->
                 <button @click="toggleMobileMenu"
                     class="group relative w-11 h-11 flex flex-col justify-center items-center rounded-lg transition-all duration-500 ease-out hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/50 active:scale-95"
-                    aria-label="Menu principal" :aria-expanded="mobileMenuOpen">
+                    :aria-label="mobileMenuOpen ? $t('menu.close') : $t('menu.open')" :aria-expanded="mobileMenuOpen">
                     <!-- Container des lignes avec meilleur centrage -->
                     <div class="relative w-6 h-4 flex flex-col justify-center">
                         <!-- Ligne du haut -->
@@ -119,16 +120,21 @@
                 </button>
             </div>
         </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <MobileMenu :isOpen="mobileMenuOpen" @close="closeMobileMenu" />
     </header>
 </template>
 
-<script setup>
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+<script setup lang="ts">
+import { onClickOutside } from '@vueuse/core'
+import { computed, ref } from 'vue'
 
 const { locale, locales, setLocale } = useI18n()
 
 const mobileMenuOpen = ref(false)
 const showMobileLanguageMenu = ref(false)
+const headerRef = ref(null)
 
 // Utiliser les locales configurées dans nuxt.config.ts
 const languages = computed(() => locales.value.map(l => ({
@@ -151,7 +157,10 @@ const toggleMobileMenu = () => {
     // Fermer le menu langue si ouvert
     showMobileLanguageMenu.value = false
     console.log('Toggle mobile menu:', mobileMenuOpen.value)
-    // TODO: Implémenter le menu mobile
+}
+
+const closeMobileMenu = () => {
+    mobileMenuOpen.value = false
 }
 
 const toggleLanguageMenu = () => {
@@ -160,29 +169,17 @@ const toggleLanguageMenu = () => {
     mobileMenuOpen.value = false
 }
 
-const changeMobileLanguage = async (langCode) => {
-    await setLocale(langCode)
+const changeMobileLanguage = async (langCode: string) => {
+    await setLocale(langCode as 'fr' | 'en' | 'es')
     showMobileLanguageMenu.value = false
     console.log('Langue changée:', langCode)
 }
 
-// Fermer les menus en cliquant à l'extérieur
-const handleClickOutside = (event) => {
-    if (!event.target.closest('.group')) {
-        showMobileLanguageMenu.value = false
-    }
-}
-
-onMounted(() => {
-    if (process.client) {
-        document.addEventListener('click', handleClickOutside)
-    }
-})
-
-onUnmounted(() => {
-    if (process.client) {
-        document.removeEventListener('click', handleClickOutside)
-    }
+// Utilisation de VueUse pour gérer le click outside du language menu mobile
+onClickOutside(headerRef, () => {
+    showMobileLanguageMenu.value = false
+}, {
+    ignore: ['.mobile-menu'] // Ignorer les clics sur le menu mobile
 })
 </script>
 

@@ -1,3 +1,382 @@
+---
+alwaysApply: true
+---
+
+# Nuxt 3 Landing Page TypeScript Cursor Rules
+
+You have extensive expertise in Vue 3, Nuxt 3, TypeScript, Node.js, Vite, VueUse, Nuxt Fonts, Nuxt Image, and Tailwind CSS, specifically focused on high-converting landing pages and marketing websites.
+
+## Architecture & Landing Page Structure
+
+### 1.1 Landing Page Overview
+
+Marketing-First Structure: organize by marketing sections (hero, features, testimonials, pricing, CTA).
+
+Nuxt 3 Landing Page Structure:
+• ~/components/sections/ for page sections (Hero, Features, Testimonials, etc.)
+• ~/components/ui/ for reusable UI components (buttons, cards, forms)
+• ~/composables/ for analytics, forms, and conversion tracking
+• ~/content/ for marketing copy and blog content (if using @nuxt/content)
+• ~/public/ for images, videos, and static assets
+• ~/server/api/ for form submissions and lead capture
+• ~/types/ for form data, analytics events, and marketing interfaces
+
+### 1.2 Core Landing Page Patterns
+
+Section-Based Components: each section should be self-contained and reusable.
+
+Conversion Tracking: track user interactions and funnel progression.
+
+A/B Testing Ready: design components for easy variant testing.
+
+Analytics Integration: Google Analytics, Facebook Pixel, etc.
+
+## Performance & SEO First
+
+### 2.1 Critical Performance
+
+**Image Optimization**: Always use Nuxt Image with lazy loading, proper sizing, and WebP/AVIF formats.
+
+**Critical CSS**: Inline critical CSS for above-the-fold content.
+
+**Resource Hints**: Use preload for critical resources, prefetch for next-likely resources.
+
+**Bundle Splitting**: Lazy load non-critical sections and components.
+
+### 2.2 SEO Excellence
+
+**Meta Management**: Use useSeoMeta for structured data, Open Graph, Twitter Cards.
+
+**Schema Markup**: Implement JSON-LD for business, products, reviews.
+
+**Core Web Vitals**: Optimize LCP, FID, CLS for Google ranking.
+
+**Sitemap & Robots**: Auto-generate with @nuxtjs/sitemap.
+
+## Landing Page Components
+
+### 3.1 Section Components
+
+Keep sections focused: max 150 lines per section component.
+
+Props-driven content: make sections reusable with props for copy and images.
+
+Responsive-first: mobile breakpoints as primary, desktop as enhancement.
+
+Conversion-focused: every section should drive toward conversion goals.
+
+### 3.2 Essential Landing Sections
+
+**Hero Section**: Value proposition, primary CTA, hero image/video.
+**Features/Benefits**: Problem-solution fit, feature highlights.
+**Social Proof**: Testimonials, logos, reviews, case studies.
+**Pricing**: Clear pricing tiers, value propositions.
+**FAQ**: Address common objections and questions.
+**Final CTA**: Strong closing call-to-action.
+
+## Forms & Lead Capture
+
+### 4.1 Form Best Practices
+
+Use Vee-Validate or VueUse form utilities.
+
+Client-side validation with server-side verification.
+
+Progressive enhancement: work without JavaScript.
+
+Conversion optimization: minimize fields, clear value props.
+
+### 4.2 Analytics & Tracking
+
+Track form interactions, section visibility, CTA clicks.
+
+Implement proper event tracking for conversion funnels.
+
+GDPR/CCPA compliant analytics setup.
+
+A/B testing infrastructure ready.
+
+## Visual Design & Animation
+
+### 5.1 Animation Guidelines
+
+**Subtle & Professional**: Avoid distracting animations.
+
+**Performance Conscious**: Use CSS transforms, avoid layout shifts.
+
+**Progressive Enhancement**: Respect prefers-reduced-motion.
+
+**Intersection Observer**: Trigger animations on scroll/visibility.
+
+### 5.2 Tailwind CSS Landing Patterns
+
+**Consistent Spacing**: Use systematic spacing scale (4, 8, 12, 16, 24, 32, 48, 64, 96px).
+
+**Typography Scale**: Establish clear hierarchy (text-xs to text-6xl).
+
+**Color Palette**: Brand colors, semantic colors (success, warning, error).
+
+**Component Tokens**: Standardized buttons, cards, sections.
+
+## Content Management
+
+### 6.1 Copy & Content
+
+Externalize marketing copy for easy A/B testing.
+
+Use structured content approach (YAML frontmatter, content modules).
+
+Implement dynamic content loading for personalization.
+
+SEO-optimized content structure and hierarchy.
+
+### 6.2 Media Management
+
+**Images**: Responsive images with art direction, lazy loading.
+
+**Videos**: Optimized formats, poster images, autoplay considerations.
+
+**Icons**: SVG sprite system or icon font optimization.
+
+**Assets**: CDN-ready structure, compression optimization.
+
+## Conversion Optimization
+
+### 7.1 CTA Best Practices
+
+**Clear Value Props**: Every CTA should communicate clear value.
+
+**Visual Hierarchy**: Make primary CTAs stand out.
+
+**Mobile Optimization**: Thumb-friendly sizing and placement.
+
+**A/B Test Ready**: Easy to swap copy, colors, placement.
+
+### 7.2 Trust & Credibility
+
+**Social Proof**: Testimonials, reviews, client logos.
+
+**Security Indicators**: SSL badges, privacy policy links.
+
+**Contact Information**: Clear contact methods and support.
+
+**Guarantee/Refund**: Risk reversal elements.
+
+## File Size & Simplicity Guidelines
+
+### 8.1 Landing Page File Limits
+
+**Section Components**: Max 100 lines (focused, single-purpose).
+
+**Page Components**: Max 200 lines (orchestrate sections).
+
+**Composables**: Max 100 lines (analytics, forms, utilities).
+
+**Content Files**: Max 150 lines (copy, structured data).
+
+**API Routes**: Max 200 lines (form handling, integrations).
+
+### 8.2 Complexity Management
+
+**Single Responsibility**: Each section has one primary goal.
+
+**Reusable Patterns**: Extract common patterns (CTAs, forms, cards).
+
+**Progressive Disclosure**: Show information progressively, not all at once.
+
+**Mobile-First Thinking**: Design for mobile constraints first.
+
+## Marketing Integrations
+
+### 9.1 Analytics & Tracking
+
+Google Analytics 4, Facebook Pixel, conversion tracking.
+
+Event tracking for user interactions and micro-conversions.
+
+Proper attribution tracking for marketing campaigns.
+
+GDPR-compliant cookie management.
+
+### 9.2 Lead Generation
+
+Form builders integration (TypeForm, Calendly).
+
+## Monarch Luxury Modern Design System
+
+### 10.1 Typography Hierarchy (Mandatory)
+
+**Primary Display Font**: Playfair Display - Reserved for main headlines and brand name only
+
+- Font weights: 300 (light), 400 (regular), 500 (medium), 600 (semi-bold), 700 (bold)
+- Usage: `font-playfair font-light` for elegant titles
+- Character: Luxurious, timeless, sophisticated serif
+
+**Primary Text Font**: Inter - For all body text, navigation, and UI elements
+
+- Font weights: 300 (light), 400 (regular), 500 (medium), 600 (semi-bold)
+- Usage: `font-inter font-medium` for standard text
+- Character: Modern, clean, highly legible sans-serif
+
+**Font Configuration**:
+
+```css
+@utility font-playfair {
+  font-family: "Playfair Display", serif;
+}
+
+@utility font-inter {
+  font-family: "Inter", sans-serif;
+}
+```
+
+### 10.2 Visual Design Philosophies
+
+**Architectural Minimalism** (Primary Approach):
+
+- Clean geometric lines and precise positioning
+- Subtle border decorations with expanding corner elements
+- Refined spacing and mathematical proportions
+- Micro-interactions with sophisticated timing (700ms+ transitions)
+
+**Glassmorphism Luxury** (Alternative Approach):
+
+- Semi-transparent backgrounds with backdrop-blur-md
+- Layered depth with white/10, white/20 opacity levels
+- Smooth hover states with scale transformations
+- Light effects and subtle shadows
+
+### 10.3 Color & Opacity Standards
+
+**Transparency Levels**:
+
+- `white/10` - Subtle background overlays
+- `white/20` - Moderate transparency for cards/panels
+- `white/30` - Borders and dividers
+- `white/40` - Secondary elements
+- `white/60` - Muted text and icons
+- `white/80` - Standard text
+- `white/90` - Primary text
+- `white` - Maximum emphasis
+
+**Gradient Patterns**:
+
+- `from-transparent via-white/20 to-transparent` - Shine effects
+- `from-white/30 to-white/10` - Subtle depth
+- `from-gray-900 via-black to-gray-800` - Fallback backgrounds
+
+### 10.4 Animation & Interaction Standards
+
+**Luxury Timing Functions**:
+
+- Standard transitions: `duration-500 ease-out`
+- Premium transitions: `duration-700 ease-out`
+- Shine effects: `duration-1000 ease-out`
+- Micro-interactions: `duration-300 ease-in-out`
+
+**Scale Transformations**:
+
+- Subtle hover: `hover:scale-102` (architectural approach)
+- Standard hover: `hover:scale-105` (glassmorphism approach)
+- Active state: `active:scale-95` or `active:scale-98`
+
+**Essential Animation Patterns**:
+
+```vue
+<!-- Architectural shine effect -->
+<div
+  class="absolute top-0 left-0 h-px w-0 bg-gradient-to-r from-transparent via-white to-transparent transition-all duration-1000 group-hover:w-full"
+></div>
+
+<!-- Expanding corners -->
+<div
+  class="absolute -top-px -left-px w-4 h-4 border-l-2 border-t-2 border-white/60 transition-all duration-300 group-hover:border-white group-hover:w-6 group-hover:h-6"
+></div>
+
+<!-- Pulse effect -->
+<div
+  class="absolute inset-0 rounded-full border border-white/20 animate-ping opacity-0 group-hover:opacity-30 transition-opacity duration-300"
+></div>
+```
+
+### 10.5 Component Design Patterns
+
+**Button Hierarchies**:
+
+- Primary: Architectural frame with expanding corners
+- Secondary: Glassmorphism with backdrop-blur
+- Tertiary: Minimal with subtle borders
+
+**Layout Principles**:
+
+- Generous whitespace: minimum 24px/48px/64px spacing
+- Mathematical proportions: golden ratio preferred
+- Asymmetrical balance: avoid perfect centering
+- Depth layering: foreground/midground/background distinction
+
+**Responsive Luxury**:
+
+- Mobile-first with premium mobile experience
+- Progressive enhancement for larger screens
+- Touch-friendly targets (min 44px)
+- Gesture-aware interactions
+
+### 10.6 Accessibility & Luxury Balance
+
+**Visual Accessibility**:
+
+- Minimum contrast ratio 4.5:1 for text
+- Focus states with `focus:ring-2 focus:ring-white/50`
+- Clear visual hierarchy with size/weight/opacity
+- Respect `prefers-reduced-motion`
+
+**Interaction Accessibility**:
+
+- Descriptive aria-labels with luxury language
+- Keyboard navigation support
+- Screen reader friendly markup
+- Progressive enhancement philosophy
+
+### 10.7 Implementation Standards
+
+**Component Structure**:
+
+- Always use semantic HTML as base
+- Group related elements with descriptive comments
+- Implement hover states as group interactions
+- Include loading and error states
+
+**CSS Organization**:
+
+```vue
+<template>
+  <button
+    class="group relative [base-classes] [interaction-classes] [accessibility-classes]"
+  >
+    <!-- Background/decoration layers -->
+    <div class="absolute [positioning] [visual-effects]"></div>
+
+    <!-- Content layer -->
+    <div class="relative [layout] [typography]">
+      <!-- Actual content -->
+    </div>
+
+    <!-- Enhancement layers -->
+    <div class="absolute [effects] [animations]"></div>
+  </button>
+</template>
+```
+
+**Quality Checklist**:
+
+- [ ] Uses correct font hierarchy (Playfair vs Inter)
+- [ ] Implements luxury timing functions (500ms+)
+- [ ] Includes hover/focus/active states
+- [ ] Maintains accessibility standards
+- [ ] Respects mobile-first approach
+- [ ] Uses systematic opacity levels
+- [ ] Includes loading states where applicable
+
 # Nuxt 3 Landing Page TypeScript Cursor Rules
 
 You have extensive expertise in Vue 3, Nuxt 3, TypeScript, Node.js, Vite, VueUse, Nuxt Fonts, Nuxt Image, and Tailwind CSS, specifically focused on high-converting landing pages and marketing websites.

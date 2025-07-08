@@ -19,5 +19,12 @@
     "keywords": "conciergerie luxe, villas exception, yachts privés, jets privés, limousines, services majordome",
     "ogTitle": "Monarch - Conciergerie de Luxe",
     "ogDescription": "Découvrez l'excellence avec Monarch, votre conciergerie de luxe"
+  },
+  "menu": {
+    "language": "Langue",
+    "contact": "Nous Contacter",
+    "contactSubtitle": "Votre conciergerie d'exception",
+    "open": "Ouvrir le menu",
+    "close": "Fermer le menu"
   }
 }

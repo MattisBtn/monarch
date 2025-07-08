@@ -19,5 +19,12 @@
     "keywords": "luxury concierge, exceptional villas, private yachts, private jets, limousines, butler services",
     "ogTitle": "Monarch - Luxury Concierge",
     "ogDescription": "Discover excellence with Monarch, your luxury concierge"
+  },
+  "menu": {
+    "language": "Language",
+    "contact": "Contact Us",
+    "contactSubtitle": "Your exceptional concierge",
+    "open": "Open menu",
+    "close": "Close menu"
   }
 }
