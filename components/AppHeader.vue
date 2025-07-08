@@ -53,43 +53,52 @@
 
             <!-- Language switcher et hamburger menu à droite -->
             <div class="flex items-center gap-2 sm:gap-4 flex-shrink-0">
-                <!-- Language switcher optimisé mobile -->
-                <div class="hidden sm:block">
-                    <LanguageSelector />
-                </div>
-
-                <!-- Version mobile compacte du language selector -->
-                <div class="sm:hidden">
-                    <button @click="toggleLanguageMenu"
-                        class="group relative w-11 h-11 flex items-center justify-center rounded-lg transition-all duration-300 ease-out hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/50 active:scale-95"
-                        aria-label="Changer de langue" :aria-expanded="showMobileLanguageMenu">
-                        <!-- Icône langue mobile -->
-                        <div class="relative">
-                            <span
-                                class="font-inter font-medium text-white/90 text-sm group-hover:text-white transition-colors duration-300">
-                                {{ currentLanguage }}
-                            </span>
-                            <!-- Indicateur dropdown -->
-                            <div
-                                class="absolute -bottom-1 -right-1 w-1.5 h-1.5 bg-white/60 rounded-full group-hover:bg-white transition-colors duration-300">
-                            </div>
+                <!-- Language switcher - géré avec ClientOnly pour éviter l'hydratation mismatch -->
+                <ClientOnly>
+                    <template #default>
+                        <!-- Language switcher pour desktop -->
+                        <div v-if="!$device.isMobile" class="block">
+                            <LanguageSelector />
                         </div>
 
-                        <!-- Dropdown mobile -->
-                        <Transition name="mobile-dropdown">
-                            <div v-show="showMobileLanguageMenu"
-                                class="absolute top-full right-0 mt-2 bg-black/80 backdrop-blur-md rounded-xl border border-white/20 overflow-hidden min-w-[100px] shadow-2xl"
-                                role="menu">
-                                <button v-for="lang in languages" :key="lang.code"
-                                    @click="changeMobileLanguage(lang.code)"
-                                    class="block w-full text-left px-4 py-3 text-white/90 hover:bg-white/20 transition-colors duration-200"
-                                    :class="{ 'bg-white/30 text-white': lang.code === locale }" role="menuitem">
-                                    <span class="font-inter font-medium text-sm">{{ lang.name }}</span>
-                                </button>
-                            </div>
-                        </Transition>
-                    </button>
-                </div>
+                        <!-- Version mobile compacte du language selector -->
+                        <div v-if="$device.isMobile" class="block">
+                            <button @click="toggleLanguageMenu"
+                                class="group relative w-11 h-11 flex items-center justify-center rounded-lg transition-all duration-300 ease-out hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/50 active:scale-95"
+                                aria-label="Changer de langue" :aria-expanded="showMobileLanguageMenu">
+                                <!-- Icône langue mobile -->
+                                <div class="relative">
+                                    <span
+                                        class="font-inter font-medium text-white/90 text-sm group-hover:text-white transition-colors duration-300">
+                                        {{ currentLanguage }}
+                                    </span>
+                                    <!-- Indicateur dropdown -->
+                                    <div
+                                        class="absolute -bottom-1 -right-1 w-1.5 h-1.5 bg-white/60 rounded-full group-hover:bg-white transition-colors duration-300">
+                                    </div>
+                                </div>
+
+                                <!-- Dropdown mobile -->
+                                <Transition name="mobile-dropdown">
+                                    <div v-if="showMobileLanguageMenu"
+                                        class="absolute top-full right-0 mt-2 bg-black/80 backdrop-blur-md rounded-xl border border-white/20 overflow-hidden min-w-[100px] shadow-2xl"
+                                        role="menu">
+                                        <button v-for="lang in languages" :key="lang.code"
+                                            @click="changeMobileLanguage(lang.code)"
+                                            class="block w-full text-left px-4 py-3 text-white/90 hover:bg-white/20 transition-colors duration-200"
+                                            :class="{ 'bg-white/30 text-white': lang.code === locale }" role="menuitem">
+                                            <span class="font-inter font-medium text-sm">{{ lang.name }}</span>
+                                        </button>
+                                    </div>
+                                </Transition>
+                            </button>
+                        </div>
+                    </template>
+                    <template #fallback>
+                        <!-- Fallback pour SSR -->
+                        <div class="w-11 h-11"></div>
+                    </template>
+                </ClientOnly>
 
                 <!-- Hamburger menu optimisé -->
                 <button @click="toggleMobileMenu"
@@ -114,7 +123,7 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 
 const { locale, locales, setLocale } = useI18n()
 
@@ -165,11 +174,15 @@ const handleClickOutside = (event) => {
 }
 
 onMounted(() => {
-    document.addEventListener('click', handleClickOutside)
+    if (process.client) {
+        document.addEventListener('click', handleClickOutside)
+    }
 })
 
 onUnmounted(() => {
-    document.removeEventListener('click', handleClickOutside)
+    if (process.client) {
+        document.removeEventListener('click', handleClickOutside)
+    }
 })
 </script>
 

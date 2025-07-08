@@ -6,6 +6,25 @@ export default defineNuxtConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    define: {
+      __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false,
+    },
+  },
+
+  vue: {
+    compilerOptions: {
+      // Configuration pour améliorer l'hydratation
+      comments: false,
+    },
+  },
+
+  ssr: true,
+
+  app: {
+    head: {
+      // Améliorer l'hydratation
+      viewport: "width=device-width, initial-scale=1",
+    },
   },
 
   modules: [
@@ -15,6 +34,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "nuxt-mcp",
     "@nuxt/icon",
+    "@nuxtjs/device",
   ],
 
   i18n: {

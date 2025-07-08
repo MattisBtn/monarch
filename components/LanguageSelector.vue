@@ -1,5 +1,5 @@
 <template>
-    <div class="relative">
+    <div class="relative" ref="target">
         <button @click="toggleMenu"
             class="text-white font-medium hover:text-gray-300 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 rounded px-2 py-1"
             aria-label="Changer de langue" aria-haspopup="true" :aria-expanded="showMenu">
@@ -9,7 +9,7 @@
         </button>
 
         <Transition name="dropdown">
-            <div v-show="showMenu"
+            <div v-if="showMenu"
                 class="absolute top-full right-0 mt-2 bg-white/10 backdrop-blur-md rounded-lg overflow-hidden min-w-[80px] shadow-xl border border-white/20"
                 role="menu">
                 <button v-for="lang in languages" :key="lang.code" @click="changeLanguage(lang.code)"
@@ -23,11 +23,13 @@
 </template>
 
 <script setup>
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { onClickOutside } from '@vueuse/core'
+import { computed, ref } from 'vue'
 
 const { locale, locales, setLocale } = useI18n()
 
 const showMenu = ref(false)
+const target = ref(null)
 
 // Utiliser les locales configurées dans nuxt.config.ts
 const languages = computed(() => locales.value.map(l => ({
@@ -50,19 +52,9 @@ const changeLanguage = async (langCode) => {
     console.log('Langue changée:', langCode)
 }
 
-// Fermer le menu en cliquant à l'extérieur
-const handleClickOutside = (event) => {
-    if (!event.target.closest('.relative')) {
-        showMenu.value = false
-    }
-}
-
-onMounted(() => {
-    document.addEventListener('click', handleClickOutside)
-})
-
-onUnmounted(() => {
-    document.removeEventListener('click', handleClickOutside)
+// Utilisation de VueUse pour gérer le click outside
+onClickOutside(target, () => {
+    showMenu.value = false
 })
 </script>
 
