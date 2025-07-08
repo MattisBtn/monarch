@@ -5,13 +5,15 @@
             :class="mobileMenuOpen ? 'bg-black/20 backdrop-blur-sm' : 'bg-transparent'">
             <!-- Bouton menu des lieux à gauche -->
             <div class="flex-shrink-0">
-                <LocationButton @click="openLocationsMenu" />
+                <LocationButton />
             </div>
 
             <!-- Logo centré avec dimensions mobiles -->
             <div class="absolute left-1/2 transform -translate-x-1/2">
                 <!-- Container architectural pour le logo -->
-                <div class="group relative p-1.5 sm:p-2 transition-all duration-700 ease-out hover:scale-102">
+                <NuxtLink to="/"
+                    class="group relative block p-1.5 sm:p-2 transition-all duration-700 ease-out hover:scale-102 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-transparent"
+                    :aria-label="$t('menu.home')">
                     <!-- Cadre architectural principal -->
                     <div
                         class="absolute inset-0 border border-white/20 transition-all duration-500 group-hover:border-white/40">
@@ -49,7 +51,7 @@
                     <div
                         class="absolute inset-0 -z-10 bg-white/5 blur-xl scale-75 opacity-0 transition-all duration-700 group-hover:opacity-50 group-hover:scale-100">
                     </div>
-                </div>
+                </NuxtLink>
             </div>
 
             <!-- Language switcher et hamburger menu à droite -->
@@ -146,11 +148,6 @@ const currentLanguage = computed(() => {
     const current = locales.value.find(l => l.code === locale.value)
     return current?.code.toUpperCase() || 'FR'
 })
-
-const openLocationsMenu = () => {
-    console.log('Ouverture du menu des destinations')
-    // TODO: Implémenter le menu des destinations
-}
 
 const toggleMobileMenu = () => {
     mobileMenuOpen.value = !mobileMenuOpen.value

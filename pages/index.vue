@@ -5,6 +5,9 @@
 
         <!-- Hero Section -->
         <HeroSection />
+
+        <!-- Destinations Section -->
+        <DestinationsSection />
     </div>
 </template>
 

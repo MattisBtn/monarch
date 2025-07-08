@@ -20,11 +20,102 @@
     "ogTitle": "Monarch - Luxury Concierge",
     "ogDescription": "Discover excellence with Monarch, your luxury concierge"
   },
+  "home": {
+    "destinations": {
+      "title": "Exceptional Destinations",
+      "subtitle": "Explore our exclusive destinations where luxury and refinement meet to create unforgettable experiences",
+      "viewAll": "Discover All Destinations",
+      "contactUs": "Contact Us"
+    }
+  },
   "menu": {
     "language": "Language",
     "contact": "Contact Us",
     "contactSubtitle": "Your exceptional concierge",
     "open": "Open menu",
-    "close": "Close menu"
+    "close": "Close menu",
+    "popularDestinations": "Popular Destinations",
+    "home": "Home",
+    "destinations": "Destinations",
+    "about": "About"
+  },
+  "destinations": {
+    "title": "Exclusive Destinations",
+    "subtitle": "Discover our luxury destinations where every detail is orchestrated to create unforgettable experiences",
+    "services": "services",
+    "categories": "categories",
+    "availability": "availability",
+    "ourServices": "Our Services",
+    "servicesDescription": "An exclusive selection of luxury services to create your perfect experience",
+    "startingFrom": "Starting from",
+    "contactConcierge": "Contact a Concierge",
+    "cta": {
+      "title": "Let's Create Your Experience",
+      "description": "Our team of expert concierges accompanies you in creating bespoke experiences",
+      "button": "Contact a Concierge"
+    },
+    "data": {
+      "los-angeles": {
+        "name": "Los Angeles",
+        "description": "City of angels where luxury meets Hollywood glamour",
+        "tagline": "Hollywood Glamour & Pacific Dreams",
+        "atmosphere": "Relaxed elegance with a touch of Hollywood glamour",
+        "highlights": [
+          "Hollywood Sign",
+          "Beverly Hills",
+          "Malibu Beaches",
+          "Sunset Strip"
+        ],
+        "bestSeason": "Year-round - Mediterranean climate",
+        "timeZone": "PST (UTC-8)"
+      },
+      "las-vegas": {
+        "name": "Las Vegas",
+        "description": "World capital of entertainment and extreme experiences",
+        "tagline": "Sin City & Extreme Experiences",
+        "atmosphere": "Electrifying 24/7 energy with a taste for the extreme",
+        "highlights": [
+          "The Strip",
+          "Bellagio Fountains",
+          "Desert Adventures",
+          "World-class Shows"
+        ],
+        "bestSeason": "Fall and Spring - Avoid scorching summer",
+        "timeZone": "PST (UTC-8)"
+      },
+      "miami": {
+        "name": "Miami",
+        "description": "Tropical paradise where Art Deco meets modern luxury",
+        "tagline": "Tropical Luxury & Art Deco Vibes",
+        "atmosphere": "Sophisticated tropical ambiance with Latin energy",
+        "highlights": [
+          "South Beach",
+          "Art Deco District",
+          "Biscayne Bay",
+          "Florida Keys"
+        ],
+        "bestSeason": "November to April - Avoid hurricane season",
+        "timeZone": "EST (UTC-5)"
+      },
+      "new-york": {
+        "name": "New York",
+        "description": "Ultimate metropolis where sophistication and energy meet",
+        "tagline": "Urban Sophistication & Endless Possibilities",
+        "atmosphere": "Urban sophistication with a unique frenetic pace",
+        "highlights": [
+          "Central Park",
+          "Times Square",
+          "Brooklyn Bridge",
+          "Statue of Liberty"
+        ],
+        "bestSeason": "Spring and Fall - Four distinct seasons",
+        "timeZone": "EST (UTC-5)"
+      }
+    }
+  },
+  "categories": {
+    "locations": "Exceptional Venues",
+    "activities": "Extreme Activities",
+    "events": "Private Events"
   }
 }

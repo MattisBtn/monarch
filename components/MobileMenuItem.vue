@@ -31,7 +31,7 @@
         </div>
 
         <!-- Content -->
-        <div class="relative px-6 py-4 min-h-[60px] flex items-center">
+        <div class="relative px-6 py-4 min-h-[60px] flex items-center justify-between">
             <span
                 class="font-inter font-medium text-white/90 group-hover:text-white text-xl tracking-wide transition-colors duration-500">
                 {{ label }}
@@ -39,7 +39,7 @@
 
             <!-- Subtle arrow indicator -->
             <div
-                class="ml-auto opacity-0 group-hover:opacity-60 transition-all duration-500 transform translate-x-0 group-hover:translate-x-1">
+                class="opacity-0 group-hover:opacity-60 transition-all duration-500 transform translate-x-0 group-hover:translate-x-1">
                 <Icon name="lucide:arrow-right" class="w-5 h-5 text-white" />
             </div>
         </div>
@@ -54,7 +54,6 @@
 <script setup lang="ts">
 interface Props {
     label: string
-    href: string
 }
 
 interface Emits {

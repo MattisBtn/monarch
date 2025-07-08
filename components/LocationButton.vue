@@ -1,5 +1,5 @@
 <template>
-    <button @click="$emit('click')"
+    <button @click="scrollToDestinations"
         class="group relative px-3 py-2 sm:px-6 sm:py-4 transition-all duration-700 ease-out hover:scale-102 focus:outline-none active:scale-98"
         aria-label="Explorer nos destinations privilégiées">
         <!-- Cadre architectural -->
@@ -72,5 +72,13 @@
 </template>
 
 <script setup>
-const emit = defineEmits(['click'])
+const scrollToDestinations = () => {
+    const destinationsSection = document.getElementById('destinations')
+    if (destinationsSection) {
+        destinationsSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        })
+    }
+}
 </script>

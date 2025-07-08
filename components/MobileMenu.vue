@@ -38,15 +38,101 @@
 
                         <!-- Navigation Links -->
                         <div class="space-y-1">
-                            <MobileMenuItem v-for="(item, index) in navigationItems" :key="item.label"
-                                :label="item.label" :href="item.href" :style="{ '--delay': index + 1 }"
-                                @click="handleNavigation(item)" class="menu-item" />
+                            <!-- Accueil -->
+                            <MobileMenuItem :label="$t('menu.home')" :style="{ '--delay': 1 }"
+                                @click="handleNavigation({ label: $t('menu.home'), href: '/' })" class="menu-item" />
+
+                            <!-- Destinations avec sous-menu -->
+                            <div class="menu-item" :style="{ '--delay': 2 }">
+                                <!-- Bouton principal Destinations -->
+                                <button @click="toggleDestinationsMenu"
+                                    class="group relative w-full text-left transition-all duration-700 ease-out hover:scale-102 focus:outline-none focus:ring-2 focus:ring-white/50 rounded-xl">
+                                    <!-- Background glassmorphism -->
+                                    <div class="absolute inset-0 bg-white/3 hover:bg-white/8 rounded-xl transition-all duration-500"
+                                        :class="showDestinationsMenu ? 'bg-white/8' : ''"></div>
+
+                                    <!-- Architectural frame -->
+                                    <div class="absolute inset-0 border border-white/15 rounded-xl transition-all duration-700 group-hover:border-white/35"
+                                        :class="showDestinationsMenu ? 'border-white/35' : ''">
+                                        <!-- Expanding corners -->
+                                        <div class="absolute -top-px -left-px w-3 h-3 border-l-2 border-t-2 border-white/25 transition-all duration-500 group-hover:border-white/50 group-hover:w-5 group-hover:h-5"
+                                            :class="showDestinationsMenu ? 'border-white/50 w-5 h-5' : ''">
+                                        </div>
+                                        <div class="absolute -top-px -right-px w-3 h-3 border-r-2 border-t-2 border-white/25 transition-all duration-500 group-hover:border-white/50 group-hover:w-5 group-hover:h-5"
+                                            :class="showDestinationsMenu ? 'border-white/50 w-5 h-5' : ''">
+                                        </div>
+                                        <div class="absolute -bottom-px -left-px w-3 h-3 border-l-2 border-b-2 border-white/25 transition-all duration-500 group-hover:border-white/50 group-hover:w-5 group-hover:h-5"
+                                            :class="showDestinationsMenu ? 'border-white/50 w-5 h-5' : ''">
+                                        </div>
+                                        <div class="absolute -bottom-px -right-px w-3 h-3 border-r-2 border-b-2 border-white/25 transition-all duration-500 group-hover:border-white/50 group-hover:w-5 group-hover:h-5"
+                                            :class="showDestinationsMenu ? 'border-white/50 w-5 h-5' : ''">
+                                        </div>
+                                    </div>
+
+                                    <!-- Shine effect -->
+                                    <div class="absolute top-0 left-0 h-px w-0 bg-gradient-to-r from-transparent via-white/50 to-transparent transition-all duration-1000 group-hover:w-full rounded-t-xl"
+                                        :class="showDestinationsMenu ? 'w-full' : ''">
+                                    </div>
+                                    <div class="absolute bottom-0 right-0 h-px w-0 bg-gradient-to-l from-transparent via-white/50 to-transparent transition-all duration-1000 group-hover:w-full rounded-b-xl"
+                                        :class="showDestinationsMenu ? 'w-full' : ''">
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="relative px-6 py-4 min-h-[60px] flex items-center justify-between">
+                                        <span
+                                            class="font-inter font-medium text-white/90 group-hover:text-white text-xl tracking-wide transition-colors duration-500"
+                                            :class="showDestinationsMenu ? 'text-white' : ''">
+                                            {{ $t('menu.destinations') }}
+                                        </span>
+
+                                        <!-- Arrow indicator -->
+                                        <div class="transition-all duration-500 transform"
+                                            :class="showDestinationsMenu ? 'rotate-180 text-white' : 'text-white/60 group-hover:text-white'">
+                                            <Icon name="lucide:chevron-down" class="w-5 h-5" />
+                                        </div>
+                                    </div>
+
+                                    <!-- Pulse effect on tap (mobile) -->
+                                    <div
+                                        class="absolute inset-0 rounded-xl border border-white/20 scale-100 opacity-0 group-active:opacity-30 group-active:scale-95 transition-all duration-200">
+                                    </div>
+                                </button>
+
+                                <!-- Sous-menu Destinations -->
+                                <Transition name="destinations-dropdown">
+                                    <div v-if="showDestinationsMenu" class="mt-2 ml-4 space-y-1">
+                                        <button v-for="destination in destinations" :key="destination.id"
+                                            @click="navigateToDestination(destination.id)"
+                                            class="group w-full text-left px-6 py-3 hover:bg-white/5 transition-all duration-300 rounded-lg border border-white/10 hover:border-white/20">
+                                            <div class="flex items-center justify-between">
+                                                <div>
+                                                    <div
+                                                        class="font-inter font-medium text-white/90 group-hover:text-white transition-colors text-lg">
+                                                        {{ destination.name }}
+                                                    </div>
+                                                    <div
+                                                        class="font-inter text-white/60 text-xs mt-1 group-hover:text-white/80 transition-colors">
+                                                        {{ destination.tagline }}
+                                                    </div>
+                                                </div>
+                                                <Icon name="lucide:map-pin"
+                                                    class="w-4 h-4 text-white/40 group-hover:text-white/70 transition-colors" />
+                                            </div>
+                                        </button>
+                                    </div>
+                                </Transition>
+                            </div>
+
+                            <!-- À Propos -->
+                            <MobileMenuItem :label="$t('menu.about')" :style="{ '--delay': 3 }"
+                                @click="handleNavigation({ label: $t('menu.about'), href: '/#about' })"
+                                class="menu-item" />
                         </div>
 
                         <!-- Secondary Actions -->
                         <div class="mt-16 space-y-4">
                             <!-- Language Selector Luxury -->
-                            <div class="menu-item" style="--delay: 6">
+                            <div class="menu-item" style="--delay: 4">
                                 <div class="group relative">
                                     <!-- Frame architectural -->
                                     <div
@@ -84,7 +170,7 @@
                             </div>
 
                             <!-- Contact CTA -->
-                            <div class="menu-item" style="--delay: 7">
+                            <div class="menu-item" style="--delay: 5">
                                 <button @click="handleContact"
                                     class="group relative w-full py-4 px-6 bg-white/3 hover:bg-white/8 border border-white/15 hover:border-white/35 rounded-xl transition-all duration-700 ease-out hover:scale-102">
                                     <div class="font-inter font-medium text-white text-lg">{{ $t('menu.contact') }}
@@ -109,6 +195,8 @@
 </template>
 
 <script setup lang="ts">
+import { destinations } from '~/data/destinations'
+
 interface NavigationItem {
     label: string
     href: string
@@ -124,29 +212,31 @@ interface Emits {
     (e: 'navigate', item: NavigationItem): void
 }
 
-defineProps<Props>()
-defineEmits<Emits>()
+const props = defineProps<Props>()
+const emit = defineEmits<Emits>()
 
 const { locale, locales, setLocale } = useI18n()
 
-// Navigation items - à personnaliser selon vos besoins
-const navigationItems: NavigationItem[] = [
-    { label: 'Accueil', href: '/' },
-    { label: 'Destinations', href: '/destinations' },
-    { label: 'Services', href: '/services' },
-    { label: 'À Propos', href: '/about' },
-]
+// État pour le sous-menu destinations
+const showDestinationsMenu = ref(false)
 
 const languages = computed(() => locales.value.map(l => ({
     code: l.code,
     name: l.name
 })))
 
+const toggleDestinationsMenu = () => {
+    showDestinationsMenu.value = !showDestinationsMenu.value
+}
+
 const handleNavigation = (item: NavigationItem) => {
-    // TODO: Implémenter la navigation
-    console.log('Navigation vers:', item)
-    // $emit('navigate', item)
-    // $emit('close')
+    navigateTo(item.href)
+    emit('close')
+}
+
+const navigateToDestination = (destinationId: string) => {
+    navigateTo(`/destinations/${destinationId}`)
+    emit('close')
 }
 
 const changeLanguage = async (langCode: string) => {
@@ -157,8 +247,15 @@ const changeLanguage = async (langCode: string) => {
 const handleContact = () => {
     // TODO: Implémenter l'action de contact
     console.log('Contact action')
-    // $emit('close')
+    emit('close')
 }
+
+// Fermer le sous-menu destinations quand le menu principal se ferme
+watch(() => props.isOpen, (newValue) => {
+    if (!newValue) {
+        showDestinationsMenu.value = false
+    }
+})
 </script>
 
 <style scoped>
@@ -203,11 +300,33 @@ const handleContact = () => {
     animation-delay: calc(0.3s + var(--delay) * 0.1s);
 }
 
+/* Animation du sous-menu destinations */
+.destinations-dropdown-enter-active,
+.destinations-dropdown-leave-active {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.destinations-dropdown-enter-from,
+.destinations-dropdown-leave-to {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+    max-height: 0;
+}
+
+.destinations-dropdown-enter-to,
+.destinations-dropdown-leave-from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    max-height: 500px;
+}
+
 /* Respect des préférences d'animation */
 @media (prefers-reduced-motion: reduce) {
 
     .mobile-menu-enter-active,
-    .mobile-menu-leave-active {
+    .mobile-menu-leave-active,
+    .destinations-dropdown-enter-active,
+    .destinations-dropdown-leave-active {
         transition-duration: 0.2s;
     }
 
