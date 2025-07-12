@@ -63,15 +63,6 @@
                                                rounded-br-2xl md:rounded-br-3xl"></div>
                                 </div>
 
-                                <!-- Mobile-Optimized Step Number -->
-                                <div class="absolute top-4 right-4 md:top-8 md:right-8 w-14 h-14 md:w-20 md:h-20 
-                                           bg-white/10 backdrop-blur-md rounded-full border border-white/30 
-                                           flex items-center justify-center transform transition-all duration-300 
-                                           group-hover:scale-110 group-active:scale-95">
-                                    <span class="font-playfair font-light text-2xl md:text-4xl text-white">{{ index + 1
-                                        }}</span>
-                                </div>
-
                                 <!-- Enhanced Mobile Shine Effects -->
                                 <div
                                     class="absolute top-0 left-0 h-1 md:h-2 w-0 bg-gradient-to-r from-transparent via-white/60 to-transparent 
@@ -122,15 +113,50 @@
                                     </p>
 
                                     <!-- Mobile-Optimized Process details -->
-                                    <div class="space-y-3 md:space-y-4">
+                                    <div class="space-y-6 md:space-y-8">
                                         <div v-for="(detail, detailIndex) in step.details" :key="detail"
-                                            class="flex items-start gap-3 md:gap-4 text-white/70 transform transition-all duration-300"
-                                            :style="{ '--detail-delay': detailIndex * 0.1 + 's' }">
-                                            <div
-                                                class="w-0.5 h-0.5 md:w-1 md:h-1 bg-white/40 rounded-full mt-3 md:mt-2 flex-shrink-0">
+                                            class="relative" :style="{ '--detail-delay': detailIndex * 0.15 + 's' }">
+
+                                            <!-- Architectural detail card -->
+                                            <div class="relative p-4 md:p-6 bg-white/[0.02] backdrop-blur-sm rounded-xl md:rounded-2xl 
+                                                        border border-white/10">
+
+                                                <!-- Background pattern -->
+                                                <div
+                                                    class="absolute inset-0 opacity-[0.02] rounded-xl md:rounded-2xl overflow-hidden">
+                                                    <div
+                                                        class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/10 via-transparent to-transparent">
+                                                    </div>
+                                                </div>
+
+                                                <!-- Number indicator -->
+                                                <div class="absolute -top-2 -right-2 md:-top-3 md:-right-3 w-8 h-8 md:w-10 md:h-10 
+                                                           bg-white/10 backdrop-blur-md rounded-full border border-white/20 
+                                                           flex items-center justify-center shadow-lg shadow-black/20">
+                                                    <span
+                                                        class="font-playfair font-light text-sm md:text-base text-white/80">
+                                                        {{ String(detailIndex + 1).padStart(2, '0') }}
+                                                    </span>
+                                                </div>
+
+                                                <!-- Content -->
+                                                <div class="relative pr-4 md:pr-6">
+                                                    <div class="flex items-start gap-3 md:gap-4">
+                                                        <!-- Detail text -->
+                                                        <div class="flex-1">
+                                                            <p
+                                                                class="font-inter text-base md:text-lg text-white/85 leading-relaxed">
+                                                                {{ $t(detail) }}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Connecting line to next item -->
+                                                <div v-if="detailIndex < step.details.length - 1"
+                                                    class="absolute left-1/2 -translate-x-1/2 bottom-0 w-px h-4 bg-gradient-to-b from-white/20 to-transparent">
+                                                </div>
                                             </div>
-                                            <span class="font-inter text-base md:text-lg leading-relaxed">{{ $t(detail)
-                                                }}</span>
                                         </div>
                                     </div>
 
