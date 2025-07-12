@@ -142,5 +142,71 @@
       "beach_club": "Beach Club",
       "rooftop_party": "Rooftop Party"
     }
+  },
+  "common": {
+    "touchToExplore": "Touch to explore"
+  },
+  "about": {
+    "philosophy": {
+      "tagline": "The Art of Extraordinary",
+      "title": "Beyond Expectations",
+      "subtitle": "We don't just fulfill dreams—we craft experiences that transcend imagination.",
+      "innovation": {
+        "title": "Innovation",
+        "description": "We constantly push boundaries, pioneering new ways to create extraordinary moments that have never been experienced before."
+      },
+      "legacy": {
+        "title": "Legacy",
+        "description": "Every experience we create becomes part of your personal story, a treasured memory that lasts forever."
+      },
+      "quote": "Luxury is not about owning the finest things—it's about experiencing the impossible moments that define who you become."
+    },
+    "process": {
+      "title": "The Monarch Way",
+      "subtitle": "Our signature approach to creating extraordinary experiences",
+      "step": "Step",
+      "steps": {
+        "listen": {
+          "title": "Listen",
+          "description": "We begin by understanding your vision, desires, and the emotions you want to feel.",
+          "detail1": "In-depth consultation to understand your desires",
+          "detail2": "Emotional mapping of your perfect experience",
+          "detail3": "Cultural and personal preference analysis"
+        },
+        "design": {
+          "title": "Design",
+          "description": "Our team crafts a bespoke experience tailored to your exact specifications and beyond.",
+          "detail1": "Custom itinerary creation with luxury partners",
+          "detail2": "Exclusive access arrangements and reservations",
+          "detail3": "Personalized service team assignment"
+        },
+        "orchestrate": {
+          "title": "Orchestrate",
+          "description": "Every detail is meticulously coordinated to ensure flawless execution.",
+          "detail1": "Real-time coordination with global partners",
+          "detail2": "Seamless logistics and transportation",
+          "detail3": "24/7 support throughout your experience"
+        },
+        "perfect": {
+          "title": "Perfect",
+          "description": "We refine and elevate every element until it exceeds your highest expectations.",
+          "detail1": "Continuous refinement and optimization",
+          "detail2": "Surprise elements and luxury touches",
+          "detail3": "Post-experience follow-up and feedback"
+        }
+      }
+    },
+    "numbers": {
+      "title": "Excellence in Numbers",
+      "subtitle": "The metrics that define our commitment to extraordinary experiences",
+      "years": "Years of Excellence",
+      "destinations": "Global Destinations",
+      "experiences": "Curated Experiences",
+      "availability": "Always Available",
+      "achievement": {
+        "title": "Global Recognition",
+        "description": "Our commitment to excellence has earned the trust of discerning clients across six continents, establishing Monarch as the definitive luxury concierge service worldwide."
+      }
+    }
   }
 }

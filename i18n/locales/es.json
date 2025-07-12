@@ -142,5 +142,71 @@
       "beach_club": "Beach Club",
       "rooftop_party": "Fiesta en Azotea"
     }
+  },
+  "common": {
+    "touchToExplore": "Toca para explorar"
+  },
+  "about": {
+    "philosophy": {
+      "tagline": "El Arte de lo Extraordinario",
+      "title": "Más Allá de las Expectativas",
+      "subtitle": "No solo cumplimos sueños—creamos experiencias que trascienden la imaginación.",
+      "innovation": {
+        "title": "Innovación",
+        "description": "Constantemente empujamos límites, siendo pioneros en nuevas formas de crear momentos extraordinarios nunca antes experimentados."
+      },
+      "legacy": {
+        "title": "Legado",
+        "description": "Cada experiencia que creamos se convierte en parte de tu historia personal, un recuerdo preciado que dura para siempre."
+      },
+      "quote": "El lujo no se trata de poseer las cosas más finas—se trata de experimentar los momentos imposibles que definen quién te conviertes."
+    },
+    "process": {
+      "title": "El Método Monarch",
+      "subtitle": "Nuestro enfoque distintivo para crear experiencias extraordinarias",
+      "step": "Paso",
+      "steps": {
+        "listen": {
+          "title": "Escuchar",
+          "description": "Comenzamos comprendiendo tu visión, deseos y las emociones que quieres sentir.",
+          "detail1": "Consulta profunda para comprender tus deseos",
+          "detail2": "Mapeo emocional de tu experiencia perfecta",
+          "detail3": "Análisis cultural y de preferencias personales"
+        },
+        "design": {
+          "title": "Diseñar",
+          "description": "Nuestro equipo crea una experiencia a medida adaptada a tus especificaciones exactas y más allá.",
+          "detail1": "Creación de itinerarios personalizados con socios de lujo",
+          "detail2": "Arreglos de acceso exclusivo y reservaciones",
+          "detail3": "Asignación de equipo de servicio personalizado"
+        },
+        "orchestrate": {
+          "title": "Orquestar",
+          "description": "Cada detalle está meticulosamente coordinado para garantizar una ejecución perfecta.",
+          "detail1": "Coordinación en tiempo real con socios globales",
+          "detail2": "Logística y transporte sin fallas",
+          "detail3": "Soporte 24/7 durante toda tu experiencia"
+        },
+        "perfect": {
+          "title": "Perfeccionar",
+          "description": "Refinamos y elevamos cada elemento hasta que supere tus más altas expectativas.",
+          "detail1": "Refinamiento y optimización continua",
+          "detail2": "Elementos sorpresa y toques de lujo",
+          "detail3": "Seguimiento post-experiencia y retroalimentación"
+        }
+      }
+    },
+    "numbers": {
+      "title": "Excelencia en Números",
+      "subtitle": "Las métricas que definen nuestro compromiso con experiencias extraordinarias",
+      "years": "Años de Excelencia",
+      "destinations": "Destinos Globales",
+      "experiences": "Experiencias Creadas",
+      "availability": "Siempre Disponible",
+      "achievement": {
+        "title": "Reconocimiento Global",
+        "description": "Nuestro compromiso con la excelencia nos ha ganado la confianza de clientes exigentes en seis continentes, estableciendo a Monarch como el servicio de conserjería de lujo definitivo a nivel mundial."
+      }
+    }
   }
 }

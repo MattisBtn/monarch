@@ -8,6 +8,9 @@
 
         <!-- Destinations Section -->
         <DestinationsSection />
+
+        <!-- About Section -->
+        <AboutSection />
     </div>
 </template>
 
