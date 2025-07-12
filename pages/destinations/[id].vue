@@ -42,7 +42,7 @@
                     <div class="flex flex-wrap items-center justify-center gap-8 mb-8 animate-fade-in-up-delay">
                         <div class="text-center">
                             <div class="text-white text-3xl font-playfair font-light">{{ getTotalServices(destination)
-                            }}
+                                }}
                             </div>
                             <div class="text-white/70 text-sm font-inter uppercase tracking-wide">{{
                                 $t('destinations.services') }}</div>
@@ -230,6 +230,8 @@
                 </div>
             </div>
         </section>
+
+        <AppFooter />
     </div>
 </template>
 

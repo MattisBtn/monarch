@@ -23,25 +23,25 @@
   },
   "home": {
     "destinations": {
-      "title": "Destinations d'Exception",
+      "title": "Destinations d'exception",
       "subtitle": "Explorez nos destinations exclusives où luxe et raffinement se rencontrent pour créer des expériences inoubliables",
-      "viewAll": "Découvrir Toutes les Destinations",
-      "contactUs": "Nous Contacter"
+      "viewAll": "Découvrir toutes les destinations",
+      "contactUs": "Nous contacter"
     }
   },
   "menu": {
     "language": "Langue",
-    "contact": "Nous Contacter",
+    "contact": "Nous contacter",
     "contactSubtitle": "Votre conciergerie d'exception",
     "open": "Ouvrir le menu",
     "close": "Fermer le menu",
-    "popularDestinations": "Destinations Populaires",
+    "popularDestinations": "Destinations populaires",
     "home": "Accueil",
     "destinations": "Destinations",
-    "about": "À Propos"
+    "about": "À propos"
   },
   "destinations": {
-    "title": "Destinations Exclusives",
+    "title": "Destinations exclusives",
     "subtitle": "Découvrez nos destinations de luxe où chaque détail est orchestré pour créer des expériences inoubliables",
     "services": "services",
     "categories": "catégories",
@@ -52,7 +52,7 @@
     "startingFrom": "À partir de",
     "contactConcierge": "Nous contacter",
     "cta": {
-      "title": "Créons Votre Expérience",
+      "title": "Créons votre expérience",
       "description": "Notre équipe de concierges experts vous accompagne dans la création d'expériences sur mesure",
       "button": "Nous contacter"
     },
