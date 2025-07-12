@@ -85,24 +85,24 @@
                                 class="mb-2 opacity-0 transition-all duration-500 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0">
                                 <span
                                     class="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white/90 text-xs font-inter font-medium tracking-wide uppercase">
-                                    {{ destination.tagline }}
+                                    {{ $t(destination.taglineKey) }}
                                 </span>
                             </div>
 
                             <!-- Destination name -->
                             <h3 class="font-playfair font-light text-3xl md:text-4xl text-white mb-3 tracking-wide">
-                                {{ destination.name }}
+                                {{ $t(destination.nameKey) }}
                             </h3>
 
                             <!-- Description -->
                             <p class="font-inter text-white/80 text-base md:text-lg mb-4 line-clamp-2">
-                                {{ destination.description }}
+                                {{ $t(destination.descriptionKey) }}
                             </p>
 
                             <!-- Highlights -->
                             <div
                                 class="flex flex-wrap gap-2 mb-4 opacity-0 transition-all duration-700 delay-200 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0">
-                                <span v-for="highlight in destination.highlights.slice(0, 3)" :key="highlight"
+                                <span v-for="highlight in getDestinationHighlights(destination)" :key="highlight"
                                     class="inline-block px-2 py-1 bg-white/10 backdrop-blur-sm rounded text-white/70 text-xs font-inter">
                                     {{ highlight }}
                                 </span>
@@ -115,7 +115,7 @@
                                     <div class="flex items-center gap-2">
                                         <Icon name="lucide:star" class="w-4 h-4 text-white/60" />
                                         <span class="text-white/80 text-sm font-inter">
-                                            {{ destination.services.length }} {{ $t('destinations.services') }}
+                                            {{ getTotalServices(destination) }} {{ $t('destinations.services') }}
                                         </span>
                                     </div>
 
@@ -187,13 +187,15 @@
 </template>
 
 <script setup>
+import { getUniqueCategories as getDestinationCategories } from '~/data/destinations'
+
 const { t } = useI18n()
 
 // Utiliser le composable pour les destinations traduites
-const { destinations } = useDestinations()
+const { getTranslatedDestinations } = useDestinations()
 
 // Featured destinations (all 4 destinations)
-const featuredDestinations = computed(() => destinations.value)
+const featuredDestinations = computed(() => getTranslatedDestinations())
 
 // Navigation functions
 const navigateToDestination = (destinationId) => {
@@ -216,10 +218,20 @@ const getDestinationVideo = (destinationId) => {
     return videoMap[destinationId] || '/videos/hero-horizontal.mp4'
 }
 
+// Get destination highlights (first 3)
+const getDestinationHighlights = (destination) => {
+    const highlights = t(destination.highlightsKey)
+    return Array.isArray(highlights) ? highlights.slice(0, 3) : []
+}
+
+// Get total number of services
+const getTotalServices = (destination) => {
+    return Object.values(destination.services).flat().length
+}
+
 // Get unique service categories for a destination
 const getUniqueCategories = (destination) => {
-    const categories = [...new Set(destination.services.map(service => service.categoryId))]
-    return categories.slice(0, 3)
+    return getDestinationCategories(destination.id).slice(0, 3)
 }
 
 // Get category color class

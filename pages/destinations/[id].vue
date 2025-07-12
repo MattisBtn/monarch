@@ -22,33 +22,34 @@
                     <div class="mb-4 animate-fade-in">
                         <span
                             class="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white/90 text-sm font-inter font-medium tracking-wide uppercase">
-                            {{ destination.tagline }}
+                            {{ $t(destination.taglineKey) }}
                         </span>
                     </div>
 
                     <!-- Nom de la destination -->
                     <h1
                         class="text-white text-6xl lg:text-8xl xl:text-9xl font-playfair font-light tracking-tight mb-8 animate-fade-in-up leading-none">
-                        {{ destination.name }}
+                        {{ $t(destination.nameKey) }}
                     </h1>
 
                     <!-- Description -->
                     <p
                         class="text-white/90 text-lg lg:text-2xl font-inter font-light tracking-wide max-w-3xl mx-auto mb-8 animate-fade-in-up-delay">
-                        {{ destination.description }}
+                        {{ $t(destination.descriptionKey) }}
                     </p>
 
                     <!-- Stats -->
                     <div class="flex flex-wrap items-center justify-center gap-8 mb-8 animate-fade-in-up-delay">
                         <div class="text-center">
-                            <div class="text-white text-3xl font-playfair font-light">{{ destination.services.length }}
+                            <div class="text-white text-3xl font-playfair font-light">{{ getTotalServices(destination)
+                            }}
                             </div>
                             <div class="text-white/70 text-sm font-inter uppercase tracking-wide">{{
                                 $t('destinations.services') }}</div>
                         </div>
                         <div class="text-center">
                             <div class="text-white text-3xl font-playfair font-light">{{
-                                getUniqueCategories(destination).length }}</div>
+                                getUniqueCategories(destination.id).length }}</div>
                             <div class="text-white/70 text-sm font-inter uppercase tracking-wide">{{
                                 $t('destinations.categories') }}</div>
                         </div>
@@ -104,13 +105,13 @@
                 </div>
 
                 <!-- Services par catégorie -->
-                <div v-for="categoryId in getUniqueCategories(destination)" :key="categoryId" class="mb-16">
+                <div v-for="categoryId in getUniqueCategories(destination.id)" :key="categoryId" class="mb-16">
                     <!-- Titre de catégorie -->
                     <div class="mb-8">
                         <div class="flex items-center gap-4">
                             <div class="w-4 h-4 rounded-full" :class="getCategoryColor(categoryId)"></div>
                             <h3 class="font-playfair font-light text-2xl md:text-3xl text-white tracking-wide">
-                                {{ getCategoryName(categoryId) }}
+                                {{ $t(`categories.${categoryId}`) }}
                             </h3>
                         </div>
                         <div class="w-24 h-px bg-gradient-to-r from-white/60 to-transparent mt-4"></div>
@@ -118,14 +119,16 @@
 
                     <!-- Grid des services de cette catégorie -->
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div v-for="service in getServicesByCategory(destination, categoryId)" :key="service.id"
+                        <div v-for="serviceKey in getServicesByCategory(destination.id, categoryId)" :key="serviceKey"
                             class="group relative cursor-pointer transition-all duration-700 ease-out hover:scale-102">
                             <!-- Service Card -->
                             <div class="relative h-80 overflow-hidden rounded-xl bg-black/40">
-                                <!-- Background Image -->
+                                <!-- Background Video -->
                                 <div class="absolute inset-0">
-                                    <NuxtImg :src="service.imageUrl" :alt="service.name"
-                                        class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110" />
+                                    <video :src="getServiceVideo(serviceKey)"
+                                        class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110"
+                                        autoplay muted loop playsinline preload="metadata">
+                                    </video>
 
                                     <!-- Gradient overlay -->
                                     <div
@@ -163,31 +166,18 @@
                                         class="mb-2 opacity-0 transition-all duration-500 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0">
                                         <span
                                             class="inline-block px-2 py-1 bg-white/20 backdrop-blur-sm rounded text-white/90 text-xs font-inter font-medium uppercase tracking-wide">
-                                            {{ getCategoryName(service.categoryId) }}
+                                            {{ $t(`categories.${categoryId}`) }}
                                         </span>
                                     </div>
 
                                     <!-- Service name -->
                                     <h4
                                         class="font-playfair font-light text-xl md:text-2xl text-white mb-2 tracking-wide">
-                                        {{ service.name }}
+                                        {{ $t(serviceKey) }}
                                     </h4>
 
-                                    <!-- Service description -->
-                                    <p class="font-inter text-white/80 text-sm mb-3 line-clamp-2">
-                                        {{ service.shortDescription }}
-                                    </p>
-
-                                    <!-- Price range -->
-                                    <div class="flex items-center justify-between">
-                                        <div class="flex items-center gap-2">
-                                            <span class="text-white/60 text-xs font-inter">{{
-                                                $t('destinations.startingFrom') }}</span>
-                                            <span class="text-white text-sm font-inter font-medium">{{
-                                                service.priceRange }}</span>
-                                        </div>
-
-                                        <!-- Arrow indicator -->
+                                    <!-- Arrow indicator -->
+                                    <div class="flex items-center justify-end mt-4">
                                         <div
                                             class="opacity-0 transition-all duration-500 group-hover:opacity-80 transform translate-x-0 group-hover:translate-x-1">
                                             <Icon name="lucide:arrow-right" class="w-4 h-4 text-white" />
@@ -244,6 +234,8 @@
 </template>
 
 <script setup>
+import { getServicesByCategory, getUniqueCategories } from '~/data/destinations'
+
 const { t } = useI18n()
 const route = useRoute()
 
@@ -273,14 +265,46 @@ const getDestinationVideo = (destinationId) => {
     return videoMap[destinationId] || '/videos/hero-horizontal.mp4'
 }
 
-// Get unique service categories for a destination
-const getUniqueCategories = (destination) => {
-    return [...new Set(destination.services.map(service => service.categoryId))]
+// Get total number of services
+const getTotalServices = (destination) => {
+    return Object.values(destination.services).flat().length
 }
 
-// Get services by category
-const getServicesByCategory = (destination, categoryId) => {
-    return destination.services.filter(service => service.categoryId === categoryId)
+// Get service video URL
+const getServiceVideo = (serviceKey) => {
+    // Extract service type from key (e.g., 'services.locations.luxury_villa' -> 'luxury_villa')
+    const serviceType = serviceKey.split('.').pop()
+
+    const videoMap = {
+        // Locations
+        'luxury_villa': '/videos/luxury_villa.mp4',
+        'supercar': '/videos/supercar.mp4',
+        'private_yacht': '/videos/private_yacht.mp4',
+        'private_jet': '/videos/private_jet.mp4',
+        'luxury_limousine': '/videos/limousine.mp4',
+        'private_helicopter': '/videos/private_helicopter.mp4',
+        'luxury_vehicle': '/videos/luxury_car.mp4',
+        'manhattan_penthouse': '/videos/penthouse.mp4',
+        'luxury_van': '/videos/luxury_van.mp4',
+
+        // Activities
+        'yacht_experience': '/videos/yacht.mp4',
+        'supercar_experience': '/videos/luxury_car.mp4',
+        'helicopter_tour': '/videos/helicopter.mp4',
+        'limousine_tour': '/videos/limousine.mp4',
+        'jet_ski': '/videos/jet_ski.mp4',
+        'manhattan_tour': '/videos/manhattan_tour.mp4',
+
+        // Events
+        'nightclub': '/videos/nightclub.mp4',
+        'restaurant': '/videos/restaurant.mp4',
+        'house_party': '/videos/house_party.mp4',
+        'yacht_party': '/videos/yacht_party.mp4',
+        'beach_club': '/videos/beach_club.mp4',
+        'rooftop_party': '/videos/rooftop_party.mp4'
+    }
+
+    return videoMap[serviceType] || '/videos/service-placeholder.mp4'
 }
 
 // Get category color class
@@ -297,23 +321,9 @@ const getCategoryColor = (categoryId) => {
     }
 }
 
-// Get category name
-const getCategoryName = (categoryId) => {
-    switch (categoryId) {
-        case 'locations':
-            return t('categories.locations')
-        case 'activities':
-            return t('categories.activities')
-        case 'events':
-            return t('categories.events')
-        default:
-            return categoryId
-    }
-}
-
 const contactConcierge = () => {
     // TODO: Implémenter contact avec concierge
-    console.log('Contact concierge for', destination.name)
+    console.log('Contact concierge for', t(destination.nameKey))
 }
 
 // Scroll to services section
@@ -329,19 +339,19 @@ const scrollToServices = () => {
 
 // SEO
 useHead({
-    title: `${destination.name} - ${t('seo.title')}`,
+    title: `${t(destination.nameKey)} - ${t('seo.title')}`,
     meta: [
         {
             name: 'description',
-            content: `${destination.description} - ${t('seo.description')}`
+            content: `${t(destination.descriptionKey)} - ${t('seo.description')}`
         },
         {
             property: 'og:title',
-            content: `${destination.name} - ${t('seo.ogTitle')}`
+            content: `${t(destination.nameKey)} - ${t('seo.ogTitle')}`
         },
         {
             property: 'og:description',
-            content: destination.description
+            content: t(destination.descriptionKey)
         }
     ]
 })

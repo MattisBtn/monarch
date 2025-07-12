@@ -56,68 +56,91 @@
       "description": "Our team of expert concierges accompanies you in creating bespoke experiences",
       "button": "Contact a Concierge"
     },
-    "data": {
-      "los-angeles": {
-        "name": "Los Angeles",
-        "description": "City of angels where luxury meets Hollywood glamour",
-        "tagline": "Hollywood Glamour & Pacific Dreams",
-        "atmosphere": "Relaxed elegance with a touch of Hollywood glamour",
-        "highlights": [
-          "Hollywood Sign",
-          "Beverly Hills",
-          "Malibu Beaches",
-          "Sunset Strip"
-        ],
-        "bestSeason": "Year-round - Mediterranean climate",
-        "timeZone": "PST (UTC-8)"
-      },
-      "las-vegas": {
-        "name": "Las Vegas",
-        "description": "World capital of entertainment and extreme experiences",
-        "tagline": "Sin City & Extreme Experiences",
-        "atmosphere": "Electrifying 24/7 energy with a taste for the extreme",
-        "highlights": [
-          "The Strip",
-          "Bellagio Fountains",
-          "Desert Adventures",
-          "World-class Shows"
-        ],
-        "bestSeason": "Fall and Spring - Avoid scorching summer",
-        "timeZone": "PST (UTC-8)"
-      },
-      "miami": {
-        "name": "Miami",
-        "description": "Tropical paradise where Art Deco meets modern luxury",
-        "tagline": "Tropical Luxury & Art Deco Vibes",
-        "atmosphere": "Sophisticated tropical ambiance with Latin energy",
-        "highlights": [
-          "South Beach",
-          "Art Deco District",
-          "Biscayne Bay",
-          "Florida Keys"
-        ],
-        "bestSeason": "November to April - Avoid hurricane season",
-        "timeZone": "EST (UTC-5)"
-      },
-      "new-york": {
-        "name": "New York",
-        "description": "Ultimate metropolis where sophistication and energy meet",
-        "tagline": "Urban Sophistication & Endless Possibilities",
-        "atmosphere": "Urban sophistication with a unique frenetic pace",
-        "highlights": [
-          "Central Park",
-          "Times Square",
-          "Brooklyn Bridge",
-          "Statue of Liberty"
-        ],
-        "bestSeason": "Spring and Fall - Four distinct seasons",
-        "timeZone": "EST (UTC-5)"
-      }
+    "los_angeles": {
+      "name": "Los Angeles",
+      "description": "City of angels where luxury meets Hollywood glamour",
+      "tagline": "Hollywood Glamour & Pacific Dreams",
+      "atmosphere": "Relaxed elegance with a touch of Hollywood glamour",
+      "highlights": [
+        "Hollywood Sign",
+        "Beverly Hills",
+        "Malibu Beaches",
+        "Sunset Strip"
+      ],
+      "best_season": "Year-round - Mediterranean climate"
+    },
+    "las_vegas": {
+      "name": "Las Vegas",
+      "description": "World capital of entertainment and extreme experiences",
+      "tagline": "Sin City & Extreme Experiences",
+      "atmosphere": "Electrifying 24/7 energy with a taste for the extreme",
+      "highlights": [
+        "The Strip",
+        "Bellagio Fountains",
+        "Desert Adventures",
+        "World-class Shows"
+      ],
+      "best_season": "Fall and Spring - Avoid scorching summer"
+    },
+    "miami": {
+      "name": "Miami",
+      "description": "Tropical paradise where Art Deco meets modern luxury",
+      "tagline": "Tropical Luxury & Art Deco Vibes",
+      "atmosphere": "Sophisticated tropical ambiance with Latin energy",
+      "highlights": [
+        "South Beach",
+        "Art Deco District",
+        "Biscayne Bay",
+        "Florida Keys"
+      ],
+      "best_season": "November to April - Avoid hurricane season"
+    },
+    "new_york": {
+      "name": "New York",
+      "description": "Ultimate metropolis where sophistication and energy meet",
+      "tagline": "Urban Sophistication & Endless Possibilities",
+      "atmosphere": "Urban sophistication with a unique frenetic pace",
+      "highlights": [
+        "Central Park",
+        "Times Square",
+        "Brooklyn Bridge",
+        "Statue of Liberty"
+      ],
+      "best_season": "Spring and Fall - Four distinct seasons"
     }
   },
   "categories": {
     "locations": "Exceptional Venues",
     "activities": "Extreme Activities",
     "events": "Private Events"
+  },
+  "services": {
+    "locations": {
+      "luxury_villa": "Luxury Villa",
+      "supercar": "Supercar",
+      "private_yacht": "Private Yacht",
+      "private_jet": "Private Jet",
+      "luxury_limousine": "Luxury Limousine",
+      "private_helicopter": "Private Helicopter",
+      "luxury_vehicle": "Luxury Vehicle",
+      "manhattan_penthouse": "Manhattan Penthouse",
+      "luxury_van": "Luxury Van"
+    },
+    "activities": {
+      "yacht_experience": "Yacht Experience",
+      "supercar_experience": "Supercar Experience",
+      "helicopter_tour": "Helicopter Tour",
+      "limousine_tour": "Limousine Tour",
+      "jet_ski": "Jet Ski",
+      "manhattan_tour": "Manhattan Tour"
+    },
+    "events": {
+      "nightclub": "Nightclub",
+      "restaurant": "Restaurant",
+      "house_party": "House Party",
+      "yacht_party": "Yacht Party",
+      "beach_club": "Beach Club",
+      "rooftop_party": "Rooftop Party"
+    }
   }
 }

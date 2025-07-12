@@ -7,48 +7,30 @@ export interface ServiceCategory {
   color: string;
 }
 
-export interface Service {
-  id: string;
-  name: string;
-  description: string;
-  categoryId: string;
-  price?: {
-    from: number;
-    currency: string;
-    unit: string; // 'day', 'hour', 'person', 'event'
-  };
-  images: string[];
-  features: string[];
-  duration?: string;
-  capacity?: number;
-  location?: string;
-  available: boolean;
-  isPopular?: boolean;
-  isExclusive?: boolean;
-  unsplashKeywords: string[]; // Pour générer les URLs Unsplash
+// Structure simplifiée des services par destination
+export interface DestinationServices {
+  locations: string[];
+  activities: string[];
+  events: string[];
 }
 
 export interface Destination {
   id: string;
   name: string;
-  description: string;
-  tagline: string;
+  nameKey: string;
+  descriptionKey: string;
+  taglineKey: string;
   coordinates: {
     lat: number;
     lng: number;
   };
   heroImage: string;
-  gallery: string[];
-  services: Service[];
-  atmosphere: string;
-  highlights: string[];
-  bestSeason: string;
+  services: DestinationServices;
+  atmosphereKey: string;
+  highlightsKey: string;
+  bestSeasonKey: string;
   timeZone: string;
-  unsplashKeywords: string[]; // Pour la hero image
-}
-
-export interface ServicesByCategory {
-  [categoryId: string]: Service[];
+  unsplashKeywords: string[];
 }
 
 // Categories de services de la conciergerie
@@ -95,7 +77,7 @@ export interface GalleryItem {
 // Booking inquiry type
 export interface BookingInquiry {
   destinationId: string;
-  serviceId: string;
+  serviceKey: string;
   dates: {
     from: Date;
     to: Date;

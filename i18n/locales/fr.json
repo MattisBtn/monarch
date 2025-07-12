@@ -11,13 +11,13 @@
       "limousines": "Limousines",
       "experiences": "Expériences uniques",
       "events": "Événements sur mesure",
-      "butler": "Services de majordome"
+      "butler": "Service de majordome"
     }
   },
   "seo": {
     "title": "Monarch - Conciergerie de Luxe",
     "description": "Monarch, votre conciergerie de luxe pour des expériences d'exception. Villas, yachts, jets privés et services sur mesure.",
-    "keywords": "conciergerie luxe, villas exception, yachts privés, jets privés, limousines, services majordome",
+    "keywords": "conciergerie de luxe, villas d'exception, yachts privés, jets privés, limousines, service majordome",
     "ogTitle": "Monarch - Conciergerie de Luxe",
     "ogDescription": "Découvrez l'excellence avec Monarch, votre conciergerie de luxe"
   },
@@ -50,74 +50,97 @@
     "ourServices": "Nos Services",
     "servicesDescription": "Une sélection exclusive de services de luxe pour créer votre expérience parfaite",
     "startingFrom": "À partir de",
-    "contactConcierge": "Contacter un Concierge",
+    "contactConcierge": "Nous contacter",
     "cta": {
       "title": "Créons Votre Expérience",
       "description": "Notre équipe de concierges experts vous accompagne dans la création d'expériences sur mesure",
-      "button": "Contacter un Concierge"
+      "button": "Nous contacter"
     },
-    "data": {
-      "los-angeles": {
-        "name": "Los Angeles",
-        "description": "Ville des anges où le luxe rencontre le glamour hollywoodien",
-        "tagline": "Hollywood Glamour & Pacific Dreams",
-        "atmosphere": "Élégance décontractée avec une touche de glamour hollywoodien",
-        "highlights": [
-          "Hollywood Sign",
-          "Beverly Hills",
-          "Malibu Beaches",
-          "Sunset Strip"
-        ],
-        "bestSeason": "Toute l'année - Climat méditerranéen",
-        "timeZone": "PST (UTC-8)"
-      },
-      "las-vegas": {
-        "name": "Las Vegas",
-        "description": "Capitale mondiale du divertissement et des expériences extrêmes",
-        "tagline": "Sin City & Extreme Experiences",
-        "atmosphere": "Énergie électrisante 24h/24 avec un goût pour l'extrême",
-        "highlights": [
-          "The Strip",
-          "Bellagio Fountains",
-          "Desert Adventures",
-          "World-class Shows"
-        ],
-        "bestSeason": "Automne et Printemps - Éviter l'été caniculaire",
-        "timeZone": "PST (UTC-8)"
-      },
-      "miami": {
-        "name": "Miami",
-        "description": "Paradis tropical où Art Déco rencontre le luxe moderne",
-        "tagline": "Tropical Luxury & Art Deco Vibes",
-        "atmosphere": "Ambiance tropicale sophistiquée avec une énergie latine",
-        "highlights": [
-          "South Beach",
-          "Art Deco District",
-          "Biscayne Bay",
-          "Florida Keys"
-        ],
-        "bestSeason": "Novembre à Avril - Éviter la saison des ouragans",
-        "timeZone": "EST (UTC-5)"
-      },
-      "new-york": {
-        "name": "New York",
-        "description": "Métropole ultime où sophistication et énergie se rencontrent",
-        "tagline": "Urban Sophistication & Endless Possibilities",
-        "atmosphere": "Sophistication urbaine avec un rythme effréné unique",
-        "highlights": [
-          "Central Park",
-          "Times Square",
-          "Brooklyn Bridge",
-          "Statue of Liberty"
-        ],
-        "bestSeason": "Printemps et Automne - Quatre saisons distinctes",
-        "timeZone": "EST (UTC-5)"
-      }
+    "los_angeles": {
+      "name": "Los Angeles",
+      "description": "Ville des anges où le luxe rencontre le glamour hollywoodien",
+      "tagline": "Glamour Hollywoodien & Rêves Pacifiques",
+      "atmosphere": "Élégance décontractée avec une touche de glamour hollywoodien",
+      "highlights": [
+        "Hollywood Sign",
+        "Beverly Hills",
+        "Plages de Malibu",
+        "Sunset Strip"
+      ],
+      "best_season": "Toute l'année - Climat méditerranéen"
+    },
+    "las_vegas": {
+      "name": "Las Vegas",
+      "description": "Capitale mondiale du divertissement et des expériences extrêmes",
+      "tagline": "Sin City & Expériences Extrêmes",
+      "atmosphere": "Énergie électrisante 24h/24 avec un goût pour l'extrême",
+      "highlights": [
+        "The Strip",
+        "Fontaines du Bellagio",
+        "Aventures Désertiques",
+        "Spectacles de Classe Mondiale"
+      ],
+      "best_season": "Automne et Printemps - Éviter l'été caniculaire"
+    },
+    "miami": {
+      "name": "Miami",
+      "description": "Paradis tropical où l'Art Déco rencontre le luxe moderne",
+      "tagline": "Luxe Tropical & Ambiance Art Déco",
+      "atmosphere": "Ambiance tropicale sophistiquée avec une énergie latine",
+      "highlights": [
+        "South Beach",
+        "Quartier Art Déco",
+        "Baie de Biscayne",
+        "Florida Keys"
+      ],
+      "best_season": "Novembre à Avril - Éviter la saison des ouragans"
+    },
+    "new_york": {
+      "name": "New York",
+      "description": "Métropole ultime où sophistication et énergie se rencontrent",
+      "tagline": "Sophistication Urbaine & Possibilités Infinies",
+      "atmosphere": "Sophistication urbaine avec un rythme effréné unique",
+      "highlights": [
+        "Central Park",
+        "Times Square",
+        "Pont de Brooklyn",
+        "Statue de la Liberté"
+      ],
+      "best_season": "Printemps et Automne - Quatre saisons distinctes"
     }
   },
   "categories": {
     "locations": "Lieux d'Exception",
     "activities": "Activités Extrêmes",
     "events": "Événements Privés"
+  },
+  "services": {
+    "locations": {
+      "luxury_villa": "Villa de Luxe",
+      "supercar": "Supercar",
+      "private_yacht": "Yacht Privé",
+      "private_jet": "Jet Privé",
+      "luxury_limousine": "Limousine de Luxe",
+      "private_helicopter": "Hélicoptère Privé",
+      "luxury_vehicle": "Véhicule de Luxe",
+      "manhattan_penthouse": "Penthouse Manhattan",
+      "luxury_van": "Van de Luxe"
+    },
+    "activities": {
+      "yacht_experience": "Expérience Yacht",
+      "supercar_experience": "Expérience Supercar",
+      "helicopter_tour": "Tour en Hélicoptère",
+      "limousine_tour": "Tour en Limousine",
+      "jet_ski": "Jet Ski",
+      "manhattan_tour": "Tour Manhattan"
+    },
+    "events": {
+      "nightclub": "Nightclub",
+      "restaurant": "Restaurant",
+      "house_party": "House Party",
+      "yacht_party": "Soirée Yacht",
+      "beach_club": "Beach Club",
+      "rooftop_party": "Soirée Rooftop"
+    }
   }
 }
