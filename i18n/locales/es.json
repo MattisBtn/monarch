@@ -54,7 +54,7 @@
     "cta": {
       "title": "Creemos tu Experiencia",
       "description": "Nuestro equipo de conserjes expertos te acompaña en la creación de experiencias a medida",
-      "button": "Contactar un Conserje"
+      "button": "Contactar"
     },
     "los_angeles": {
       "name": "Los Ángeles",
@@ -212,7 +212,7 @@
   "cta": {
     "title": "¿Listo para lo Extraordinario?",
     "subtitle": "Deja que nuestros conserjes expertos creen tu próxima experiencia inolvidable. Jets privados, lugares exclusivos, orquestamos lo imposible.",
-    "button": "Comienza tu Viaje"
+    "button": "Comenzar"
   },
   "footer": {
     "brand": {

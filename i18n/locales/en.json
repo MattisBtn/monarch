@@ -54,7 +54,7 @@
     "cta": {
       "title": "Let's Create Your Experience",
       "description": "Our team of expert concierges accompanies you in creating bespoke experiences",
-      "button": "Contact a Concierge"
+      "button": "Contact"
     },
     "los_angeles": {
       "name": "Los Angeles",
@@ -212,7 +212,7 @@
   "cta": {
     "title": "Ready for the Extraordinary?",
     "subtitle": "Let our expert concierges craft your next unforgettable experience. From private jets to exclusive venues, we orchestrate the impossible.",
-    "button": "Begin Your Journey"
+    "button": "Begin"
   },
   "footer": {
     "brand": {

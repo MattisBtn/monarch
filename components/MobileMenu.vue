@@ -125,8 +125,7 @@
 
                             <!-- À Propos -->
                             <MobileMenuItem :label="$t('menu.about')" :style="{ '--delay': 3 }"
-                                @click="handleNavigation({ label: $t('menu.about'), href: '/#about' })"
-                                class="menu-item" />
+                                @click="handleAboutNavigation" class="menu-item" />
                         </div>
 
                         <!-- Secondary Actions -->
@@ -195,6 +194,7 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from 'vue'
 import { destinations } from '~/data/destinations'
 
 interface NavigationItem {
@@ -216,6 +216,7 @@ const props = defineProps<Props>()
 const emit = defineEmits<Emits>()
 
 const { locale, locales, setLocale } = useI18n()
+const route = useRoute()
 
 // État pour le sous-menu destinations
 const showDestinationsMenu = ref(false)
@@ -249,6 +250,41 @@ const handleContact = () => {
     console.log('Contact action')
     emit('close')
 }
+
+const handleAboutNavigation = async () => {
+    // Fermer le menu mobile
+    emit('close')
+
+    // Si nous sommes déjà sur la page d'accueil
+    if (route.path === '/') {
+        const aboutSection = document.getElementById('about')
+        if (aboutSection) {
+            aboutSection.scrollIntoView({ behavior: 'smooth' })
+        }
+    } else {
+        // Sinon, naviguer vers la page d'accueil
+        await navigateTo('/')
+
+        // Attendre que la page soit chargée
+        await nextTick()
+        setTimeout(() => {
+            const aboutSection = document.getElementById('about')
+            if (aboutSection) {
+                aboutSection.scrollIntoView({ behavior: 'smooth' })
+            }
+        }, 100)
+    }
+}
+
+// Gérer le défilement automatique si on arrive avec un hash #about
+onMounted(() => {
+    if (window.location.hash === '#about') {
+        const aboutSection = document.getElementById('about')
+        if (aboutSection) {
+            aboutSection.scrollIntoView({ behavior: 'smooth' })
+        }
+    }
+})
 
 // Fermer le sous-menu destinations quand le menu principal se ferme
 watch(() => props.isOpen, (newValue) => {

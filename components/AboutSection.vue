@@ -1,5 +1,5 @@
 <template>
-    <section class="about-section relative overflow-hidden">
+    <section id="about" class="about-section relative overflow-hidden">
         <!-- Process Section with Media (enhanced for mobile) -->
         <div class="relative py-16 md:py-32 bg-gradient-to-b from-black to-gray-900">
             <div class="max-w-7xl mx-auto px-4 md:px-6">
