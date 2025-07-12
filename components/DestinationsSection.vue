@@ -190,6 +190,7 @@
 import { getUniqueCategories as getDestinationCategories } from '~/data/destinations'
 
 const { t } = useI18n()
+const { openWhatsApp } = useWhatsApp()
 
 // Utiliser le composable pour les destinations traduites
 const { getTranslatedDestinations } = useDestinations()
@@ -203,8 +204,7 @@ const navigateToDestination = (destinationId) => {
 }
 
 const scrollToContact = () => {
-    // TODO: Implémenter scroll vers section contact
-    console.log('Scroll to contact section')
+    openWhatsApp()
 }
 
 // Get destination video URL

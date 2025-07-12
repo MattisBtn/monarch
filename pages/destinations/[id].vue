@@ -240,6 +240,7 @@ import { getServicesByCategory, getUniqueCategories } from '~/data/destinations'
 
 const { t } = useI18n()
 const route = useRoute()
+const { openWhatsApp } = useWhatsApp()
 
 // Utiliser le composable pour obtenir la destination traduite
 const { getDestinationById } = useDestinations()
@@ -324,8 +325,8 @@ const getCategoryColor = (categoryId) => {
 }
 
 const contactConcierge = () => {
-    // TODO: Implémenter contact avec concierge
-    console.log('Contact concierge for', t(destination.nameKey))
+    const customMessage = t('destinations.cta.description') + ' - ' + t(destination.nameKey)
+    openWhatsApp(customMessage)
 }
 
 // Scroll to services section

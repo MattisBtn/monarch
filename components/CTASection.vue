@@ -118,10 +118,10 @@
 
 <script setup>
 const { t } = useI18n()
+const { openWhatsApp } = useWhatsApp()
 
 const handleContact = () => {
-    // TODO: Implémenter l'action de contact (modal, navigation, etc.)
-    console.log('Contact CTA clicked')
+    openWhatsApp()
 }
 </script>
 

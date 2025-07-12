@@ -146,6 +146,12 @@
   "common": {
     "touchToExplore": "Toca para explorar"
   },
+  "whatsapp": {
+    "fab": {
+      "tooltip": "Contáctanos",
+      "message": "¡Hola! Estoy interesado(a) en los servicios de conserjería de lujo de Monarch. Me gustaría conocer más sobre sus experiencias exclusivas."
+    }
+  },
   "about": {
     "philosophy": {
       "tagline": "El Arte de lo Extraordinario",

@@ -112,7 +112,7 @@
                                                     </div>
                                                     <div
                                                         class="font-inter text-white/60 text-xs mt-1 group-hover:text-white/80 transition-colors">
-                                                        {{ destination.tagline }}
+                                                        {{ $t(destination.taglineKey) }}
                                                     </div>
                                                 </div>
                                                 <Icon name="lucide:map-pin"
@@ -155,7 +155,7 @@
                                     <div class="relative p-6 text-center">
                                         <h3 class="font-inter font-medium text-white/90 text-lg mb-4">{{
                                             $t('menu.language')
-                                            }}</h3>
+                                        }}</h3>
                                         <div class="flex justify-center gap-3">
                                             <button v-for="lang in languages" :key="lang.code"
                                                 @click="changeLanguage(lang.code)"
@@ -217,6 +217,7 @@ const emit = defineEmits<Emits>()
 
 const { locale, locales, setLocale } = useI18n()
 const route = useRoute()
+const { openWhatsApp } = useWhatsApp()
 
 // État pour le sous-menu destinations
 const showDestinationsMenu = ref(false)
@@ -246,8 +247,7 @@ const changeLanguage = async (langCode: string) => {
 }
 
 const handleContact = () => {
-    // TODO: Implémenter l'action de contact
-    console.log('Contact action')
+    openWhatsApp()
     emit('close')
 }
 

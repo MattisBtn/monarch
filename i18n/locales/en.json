@@ -146,6 +146,12 @@
   "common": {
     "touchToExplore": "Touch to explore"
   },
+  "whatsapp": {
+    "fab": {
+      "tooltip": "Contact us",
+      "message": "Hello! I'm interested in Monarch's luxury concierge services. I'd like to learn more about your exclusive experiences."
+    }
+  },
   "about": {
     "philosophy": {
       "tagline": "The Art of Extraordinary",

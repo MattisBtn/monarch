@@ -146,6 +146,12 @@
   "common": {
     "touchToExplore": "Toucher pour explorer"
   },
+  "whatsapp": {
+    "fab": {
+      "tooltip": "Nous contacter",
+      "message": "Bonjour ! Je suis intéressé(e) par les services de conciergerie de luxe Monarch. J'aimerais en savoir plus sur vos expériences exclusives."
+    }
+  },
   "about": {
     "process": {
       "title": "La méthode Monarch",

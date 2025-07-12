@@ -27,6 +27,12 @@ export default defineNuxtConfig({
     },
   },
 
+  appConfig: {
+    whatsapp: {
+      number: "+33665759693",
+    },
+  },
+
   modules: [
     "@vueuse/nuxt",
     "@nuxt/fonts",
