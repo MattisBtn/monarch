@@ -110,35 +110,35 @@
     }
   },
   "categories": {
-    "locations": "Lieux d'Exception",
-    "activities": "Activités Extrêmes",
-    "events": "Événements Privés"
+    "locations": "Lieux d'exception",
+    "activities": "Activités extrêmes",
+    "events": "Événements privés"
   },
   "services": {
     "locations": {
-      "luxury_villa": "Villa de Luxe",
+      "luxury_villa": "Villa de luxe",
       "supercar": "Supercar",
-      "private_yacht": "Yacht Privé",
-      "private_jet": "Jet Privé",
-      "luxury_limousine": "Limousine de Luxe",
-      "private_helicopter": "Hélicoptère Privé",
-      "luxury_vehicle": "Véhicule de Luxe",
+      "private_yacht": "Yacht privé",
+      "private_jet": "Jet privé",
+      "luxury_limousine": "Limousine de luxe",
+      "private_helicopter": "Hélicoptère privé",
+      "luxury_vehicle": "Véhicule de luxe",
       "manhattan_penthouse": "Penthouse Manhattan",
-      "luxury_van": "Van de Luxe"
+      "luxury_van": "Van de luxe"
     },
     "activities": {
-      "yacht_experience": "Expérience Yacht",
-      "supercar_experience": "Expérience Supercar",
-      "helicopter_tour": "Tour en Hélicoptère",
-      "limousine_tour": "Tour en Limousine",
+      "yacht_experience": "Expérience yacht",
+      "supercar_experience": "Expérience supercar",
+      "helicopter_tour": "Tour en hélicoptère",
+      "limousine_tour": "Tour en limousine",
       "jet_ski": "Jet Ski",
       "manhattan_tour": "Tour Manhattan"
     },
     "events": {
       "nightclub": "Nightclub",
       "restaurant": "Restaurant",
-      "house_party": "House Party",
-      "yacht_party": "Soirée Yacht",
+      "house_party": "House party",
+      "yacht_party": "Soirée yacht",
       "beach_club": "Beach Club",
       "rooftop_party": "Soirée Rooftop"
     }
@@ -147,22 +147,8 @@
     "touchToExplore": "Toucher pour explorer"
   },
   "about": {
-    "philosophy": {
-      "tagline": "L'Art de l'Extraordinaire",
-      "title": "Au-delà des Attentes",
-      "subtitle": "Nous ne réalisons pas simplement des rêves—nous créons des expériences qui transcendent l'imagination.",
-      "innovation": {
-        "title": "Innovation",
-        "description": "Nous repoussons constamment les limites, pionnier de nouvelles façons de créer des moments extraordinaires jamais vécus auparavant."
-      },
-      "legacy": {
-        "title": "Héritage",
-        "description": "Chaque expérience que nous créons devient partie de votre histoire personnelle, un souvenir précieux qui dure pour toujours."
-      },
-      "quote": "Le luxe ne consiste pas à posséder les plus belles choses—c'est vivre les moments impossibles qui définissent qui vous devenez."
-    },
     "process": {
-      "title": "La Méthode Monarch",
+      "title": "La méthode Monarch",
       "subtitle": "Notre approche signature pour créer des expériences extraordinaires",
       "step": "Étape",
       "steps": {
@@ -195,18 +181,28 @@
           "detail3": "Suivi post-expérience et retours d'information"
         }
       }
-    },
-    "numbers": {
-      "title": "L'Excellence en Chiffres",
-      "subtitle": "Les métriques qui définissent notre engagement envers les expériences extraordinaires",
-      "years": "Années d'Excellence",
-      "destinations": "Destinations Globales",
-      "experiences": "Expériences Créées",
-      "availability": "Toujours Disponible",
-      "achievement": {
-        "title": "Reconnaissance Mondiale",
-        "description": "Notre engagement envers l'excellence nous a valu la confiance de clients exigeants sur six continents, établissant Monarch comme le service de conciergerie de luxe de référence mondiale."
-      }
     }
+  },
+  "cta": {
+    "title": "Prêt pour l'extraordinaire ?",
+    "subtitle": "Laissez nos concierges experts créer votre prochaine expérience inoubliable. Jets privés, lieux exclusifs, nous orchestrons l'impossible.",
+    "button": "Commencer Votre Voyage"
+  },
+  "footer": {
+    "brand": {
+      "title": "Luxe Redéfini",
+      "description": "Nous créons des expériences sur mesure qui transcendent l'ordinaire, façonnant des moments qui deviennent des souvenirs précieux à vie."
+    },
+    "navigation": {
+      "title": "Navigation"
+    },
+    "services": {
+      "title": "Services"
+    },
+    "contact": {
+      "availability": "Disponible 24/7 dans le monde entier",
+      "global": "Réseau de conciergerie mondial"
+    },
+    "copyright": "Monarch. Tous droits réservés."
   }
 }

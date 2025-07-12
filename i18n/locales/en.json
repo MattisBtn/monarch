@@ -208,5 +208,27 @@
         "description": "Our commitment to excellence has earned the trust of discerning clients across six continents, establishing Monarch as the definitive luxury concierge service worldwide."
       }
     }
+  },
+  "cta": {
+    "title": "Ready for the Extraordinary?",
+    "subtitle": "Let our expert concierges craft your next unforgettable experience. From private jets to exclusive venues, we orchestrate the impossible.",
+    "button": "Begin Your Journey"
+  },
+  "footer": {
+    "brand": {
+      "title": "Luxury Redefined",
+      "description": "We create bespoke experiences that transcend the ordinary, crafting moments that become treasured memories for life."
+    },
+    "navigation": {
+      "title": "Navigation"
+    },
+    "services": {
+      "title": "Services"
+    },
+    "contact": {
+      "availability": "Available 24/7 worldwide",
+      "global": "Global concierge network"
+    },
+    "copyright": "Monarch. All rights reserved."
   }
 }

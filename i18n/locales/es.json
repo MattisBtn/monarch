@@ -208,5 +208,27 @@
         "description": "Nuestro compromiso con la excelencia nos ha ganado la confianza de clientes exigentes en seis continentes, estableciendo a Monarch como el servicio de conserjería de lujo definitivo a nivel mundial."
       }
     }
+  },
+  "cta": {
+    "title": "¿Listo para lo Extraordinario?",
+    "subtitle": "Deja que nuestros conserjes expertos creen tu próxima experiencia inolvidable. Jets privados, lugares exclusivos, orquestamos lo imposible.",
+    "button": "Comienza tu Viaje"
+  },
+  "footer": {
+    "brand": {
+      "title": "Lujo Redefinido",
+      "description": "Creamos experiencias a medida que trascienden lo ordinario, forjando momentos que se convierten en recuerdos preciados de por vida."
+    },
+    "navigation": {
+      "title": "Navegación"
+    },
+    "services": {
+      "title": "Servicios"
+    },
+    "contact": {
+      "availability": "Disponible 24/7 en todo el mundo",
+      "global": "Red global de conserjería"
+    },
+    "copyright": "Monarch. Todos los derechos reservados."
   }
 }

@@ -11,6 +11,12 @@
 
         <!-- About Section -->
         <AboutSection />
+
+        <!-- CTA Section -->
+        <CTASection />
+
+        <!-- Footer -->
+        <AppFooter />
     </div>
 </template>
 
