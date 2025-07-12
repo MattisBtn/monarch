@@ -26,8 +26,8 @@
                 </div>
             </div>
 
-            <!-- Destinations Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <!-- Current Destinations Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
                 <!-- Destination Video Cards -->
                 <div v-for="(destination, index) in featuredDestinations" :key="destination.id"
                     @click="navigateToDestination(destination.id)"
@@ -148,6 +148,88 @@
                 </div>
             </div>
 
+            <!-- Coming Soon Section -->
+            <div class="mb-16">
+                <!-- Coming Soon Header -->
+                <div class="text-center mb-12">
+                    <h3 class="font-playfair font-light text-3xl md:text-4xl text-white mb-4 tracking-wide">
+                        {{ $t('home.destinations.comingSoon.title') }}
+                    </h3>
+                    <p class="font-inter font-light text-lg text-white/70 max-w-2xl mx-auto">
+                        {{ $t('home.destinations.comingSoon.subtitle') }}
+                    </p>
+                    <div class="w-16 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent mx-auto mt-6">
+                    </div>
+                </div>
+
+                <!-- Coming Soon Destinations Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div v-for="(destination, index) in comingSoonDestinationsTranslated" :key="destination.id"
+                        class="group relative coming-soon-card" :style="{ '--delay': (index + 4) * 0.2 + 's' }">
+                        <!-- Main card container -->
+                        <div class="relative h-[320px] overflow-hidden rounded-xl bg-black/20 border border-white/10">
+                            <!-- Background video -->
+                            <div class="absolute inset-0">
+                                <video :src="getComingSoonVideo(destination.id)"
+                                    class="w-full h-full object-cover opacity-90 transition-opacity duration-700 group-hover:opacity-100"
+                                    autoplay muted loop playsinline preload="metadata">
+                                </video>
+
+                                <!-- Gradient overlay -->
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30">
+                                </div>
+
+                                <!-- Coming Soon overlay -->
+                                <div class="absolute inset-0 bg-black/30 backdrop-blur-[1px]">
+                                </div>
+                            </div>
+
+                            <!-- Coming Soon Badge -->
+                            <div class="absolute top-4 left-4 z-10">
+                                <div class="px-3 py-1 bg-white/15 backdrop-blur-sm rounded-full border border-white/20">
+                                    <span class="text-white/90 text-xs font-inter font-medium tracking-wide uppercase">
+                                        {{ $t('home.destinations.comingSoon.badge') }}
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Content -->
+                            <div class="absolute bottom-0 left-0 right-0 p-6">
+                                <!-- Destination name -->
+                                <h4 class="font-playfair font-light text-2xl text-white mb-2 tracking-wide">
+                                    {{ $t(destination.nameKey) }}
+                                </h4>
+
+                                <!-- Description -->
+                                <p class="font-inter text-white/70 text-sm mb-3 line-clamp-2">
+                                    {{ $t(destination.descriptionKey) }}
+                                </p>
+
+                                <!-- Highlights preview -->
+                                <div class="flex flex-wrap gap-1 mb-3">
+                                    <span v-for="highlight in getDestinationHighlights(destination).slice(0, 2)"
+                                        :key="highlight"
+                                        class="inline-block px-2 py-1 bg-white/10 backdrop-blur-sm rounded text-white/60 text-xs font-inter">
+                                        {{ highlight }}
+                                    </span>
+                                </div>
+
+                                <!-- Services preview -->
+                                <div class="flex items-center gap-2 opacity-60">
+                                    <Icon name="lucide:calendar" class="w-3 h-3 text-white/60" />
+                                    <span class="text-white/60 text-xs font-inter">
+                                        {{ getTotalServices(destination) }} {{ $t('destinations.services') }}
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Subtle frame -->
+                            <div class="absolute inset-0 border border-white/10 rounded-xl pointer-events-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- CTA to scroll to top or contact -->
             <div class="text-center">
                 <button @click="scrollToContact"
@@ -187,7 +269,7 @@
 </template>
 
 <script setup>
-import { getUniqueCategories as getDestinationCategories } from '~/data/destinations'
+import { comingSoonDestinations, getUniqueCategories as getDestinationCategories } from '~/data/destinations'
 
 const { t } = useI18n()
 const { openWhatsApp } = useWhatsApp()
@@ -197,6 +279,19 @@ const { getTranslatedDestinations } = useDestinations()
 
 // Featured destinations (all 4 destinations)
 const featuredDestinations = computed(() => getTranslatedDestinations())
+
+// Coming soon destinations
+const comingSoonDestinationsTranslated = computed(() => {
+    return comingSoonDestinations.map(dest => ({
+        ...dest,
+        name: t(dest.nameKey),
+        description: t(dest.descriptionKey),
+        tagline: t(dest.taglineKey),
+        atmosphere: t(dest.atmosphereKey),
+        highlights: t(dest.highlightsKey),
+        bestSeason: t(dest.bestSeasonKey)
+    }))
+})
 
 // Navigation functions
 const navigateToDestination = (destinationId) => {
@@ -214,6 +309,17 @@ const getDestinationVideo = (destinationId) => {
         'las-vegas': '/videos/las-vegas.mp4',
         'miami': '/videos/miami.mp4',
         'new-york': '/videos/nyc.mp4'
+    }
+    return videoMap[destinationId] || '/videos/hero-horizontal.mp4'
+}
+
+// Get coming soon video URL (vous pourrez définir vos propres URLs)
+const getComingSoonVideo = (destinationId) => {
+    const videoMap = {
+        'marbella': '/videos/marbella.mp4', // À définir
+        'paris': '/videos/paris.mp4', // À définir
+        'cannes': '/videos/cannes.mp4', // À définir
+        'saint-tropez': '/videos/saint-tropez.mp4' // À définir
     }
     return videoMap[destinationId] || '/videos/hero-horizontal.mp4'
 }
@@ -293,11 +399,26 @@ const getCategoryColor = (categoryId) => {
     opacity: 0;
 }
 
+.coming-soon-card {
+    animation: fade-in-up 0.6s ease-out var(--delay) forwards;
+    opacity: 0;
+}
+
 .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+/* Coming soon specific styles */
+.coming-soon-card {
+    cursor: default;
+}
+
+.coming-soon-card:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease-out;
 }
 
 /* Respect des préférences d'animation */
@@ -306,7 +427,8 @@ const getCategoryColor = (categoryId) => {
     .animate-fade-in,
     .animate-fade-in-up,
     .animate-fade-in-up-delay,
-    .destination-preview-card {
+    .destination-preview-card,
+    .coming-soon-card {
         animation: none;
         opacity: 1;
         transform: none;

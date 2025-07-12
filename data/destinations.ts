@@ -58,9 +58,54 @@ const destinationServices = {
     ],
     events: ["services.events.nightclub", "services.events.restaurant"],
   },
+  // Services pour les destinations à venir
+  marbella: {
+    locations: [
+      "services.locations.luxury_villa",
+      "services.locations.supercar",
+      "services.locations.private_yacht",
+    ],
+    events: [
+      "services.events.nightclub",
+      "services.events.restaurant",
+      "services.events.beach_club",
+    ],
+  },
+  paris: {
+    locations: [
+      "services.locations.luxury_villa",
+      "services.locations.luxury_vehicle",
+      "services.locations.private_helicopter",
+    ],
+    events: ["services.events.nightclub", "services.events.restaurant"],
+  },
+  cannes: {
+    locations: [
+      "services.locations.luxury_villa",
+      "services.locations.private_yacht",
+      "services.locations.luxury_vehicle",
+    ],
+    events: [
+      "services.events.yacht_party",
+      "services.events.restaurant",
+      "services.events.beach_club",
+    ],
+  },
+  "saint-tropez": {
+    locations: [
+      "services.locations.luxury_villa",
+      "services.locations.private_yacht",
+      "services.locations.supercar",
+    ],
+    events: [
+      "services.events.yacht_party",
+      "services.events.beach_club",
+      "services.events.restaurant",
+    ],
+  },
 };
 
-// Données des destinations
+// Données des destinations actives
 export const destinations: Destination[] = [
   {
     id: "los-angeles",
@@ -149,6 +194,102 @@ export const destinations: Destination[] = [
       "central-park",
       "urban",
     ],
+  },
+];
+
+// Nouvelles destinations à venir
+export const comingSoonDestinations: Destination[] = [
+  {
+    id: "marbella",
+    name: "Marbella",
+    nameKey: "destinations.marbella.name",
+    descriptionKey: "destinations.marbella.description",
+    taglineKey: "destinations.marbella.tagline",
+    coordinates: { lat: 36.5101, lng: -4.8824 },
+    heroImage: unsplashUrl([
+      "marbella",
+      "puerto-banus",
+      "luxury",
+      "mediterranean",
+    ]),
+    services: destinationServices["marbella"],
+    atmosphereKey: "destinations.marbella.atmosphere",
+    highlightsKey: "destinations.marbella.highlights",
+    bestSeasonKey: "destinations.marbella.best_season",
+    timeZone: "CET (UTC+1)",
+    unsplashKeywords: [
+      "marbella",
+      "puerto-banus",
+      "mediterranean",
+      "luxury",
+      "spain",
+    ],
+    isComingSoon: true,
+  },
+  {
+    id: "paris",
+    name: "Paris",
+    nameKey: "destinations.paris.name",
+    descriptionKey: "destinations.paris.description",
+    taglineKey: "destinations.paris.tagline",
+    coordinates: { lat: 48.8566, lng: 2.3522 },
+    heroImage: unsplashUrl([
+      "paris",
+      "eiffel-tower",
+      "luxury",
+      "champs-elysees",
+    ]),
+    services: destinationServices["paris"],
+    atmosphereKey: "destinations.paris.atmosphere",
+    highlightsKey: "destinations.paris.highlights",
+    bestSeasonKey: "destinations.paris.best_season",
+    timeZone: "CET (UTC+1)",
+    unsplashKeywords: [
+      "paris",
+      "eiffel-tower",
+      "champs-elysees",
+      "luxury",
+      "france",
+    ],
+    isComingSoon: true,
+  },
+  {
+    id: "cannes",
+    name: "Cannes",
+    nameKey: "destinations.cannes.name",
+    descriptionKey: "destinations.cannes.description",
+    taglineKey: "destinations.cannes.tagline",
+    coordinates: { lat: 43.5528, lng: 7.0174 },
+    heroImage: unsplashUrl(["cannes", "croisette", "film-festival", "luxury"]),
+    services: destinationServices["cannes"],
+    atmosphereKey: "destinations.cannes.atmosphere",
+    highlightsKey: "destinations.cannes.highlights",
+    bestSeasonKey: "destinations.cannes.best_season",
+    timeZone: "CET (UTC+1)",
+    unsplashKeywords: [
+      "cannes",
+      "croisette",
+      "film-festival",
+      "luxury",
+      "france",
+    ],
+    isComingSoon: true,
+  },
+  {
+    id: "saint-tropez",
+    name: "Saint-Tropez",
+    nameKey: "destinations.saint_tropez.name",
+    descriptionKey: "destinations.saint_tropez.description",
+    taglineKey: "destinations.saint_tropez.tagline",
+    coordinates: { lat: 43.2677, lng: 6.6407 },
+    heroImage: unsplashUrl(["saint-tropez", "luxury", "riviera", "yacht"]),
+    services: destinationServices["saint-tropez"],
+    atmosphereKey: "destinations.saint_tropez.atmosphere",
+    highlightsKey: "destinations.saint_tropez.highlights",
+    bestSeasonKey: "destinations.saint_tropez.best_season",
+    timeZone: "CET (UTC+1)",
+    unsplashKeywords: ["saint-tropez", "luxury", "riviera", "yacht", "france"],
+    isComingSoon: true,
   },
 ];
 

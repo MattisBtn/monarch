@@ -42,7 +42,7 @@
                     <div class="flex flex-wrap items-center justify-center gap-8 mb-8 animate-fade-in-up-delay">
                         <div class="text-center">
                             <div class="text-white text-3xl font-playfair font-light">{{ getTotalServices(destination)
-                                }}
+                            }}
                             </div>
                             <div class="text-white/70 text-sm font-inter uppercase tracking-wide">{{
                                 $t('destinations.services') }}</div>
@@ -105,92 +105,145 @@
                 </div>
 
                 <!-- Services par catégorie -->
-                <div v-for="categoryId in getUniqueCategories(destination.id)" :key="categoryId" class="mb-16">
+                <div v-for="categoryId in getUniqueCategories(destination.id)" :key="categoryId" class="mb-20 lg:mb-24">
                     <!-- Titre de catégorie -->
-                    <div class="mb-8">
-                        <div class="flex items-center gap-4">
-                            <div class="w-4 h-4 rounded-full" :class="getCategoryColor(categoryId)"></div>
-                            <h3 class="font-playfair font-light text-2xl md:text-3xl text-white tracking-wide">
+                    <div class="mb-12 lg:mb-16">
+                        <div class="flex items-center gap-4 mb-6">
+                            <!-- Indicateur de catégorie -->
+                            <div class="relative">
+                                <div class="w-3 h-3 rounded-full animate-pulse" :class="getCategoryColor(categoryId)">
+                                </div>
+                                <div class="absolute inset-0 w-3 h-3 rounded-full opacity-20 animate-ping"
+                                    :class="getCategoryColor(categoryId)"></div>
+                            </div>
+
+                            <!-- Titre de catégorie -->
+                            <h3 class="font-playfair font-light text-3xl lg:text-4xl text-white tracking-wide">
                                 {{ $t(`categories.${categoryId}`) }}
                             </h3>
                         </div>
-                        <div class="w-24 h-px bg-gradient-to-r from-white/60 to-transparent mt-4"></div>
+
+                        <!-- Ligne décorative -->
+                        <div class="flex items-center gap-4">
+                            <div class="w-32 h-px bg-gradient-to-r from-white/60 via-white/30 to-transparent"></div>
+                            <div class="w-2 h-2 rounded-full bg-white/20"></div>
+                            <div class="w-16 h-px bg-gradient-to-r from-white/20 to-transparent"></div>
+                        </div>
                     </div>
 
                     <!-- Grid des services de cette catégorie -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div v-for="serviceKey in getServicesByCategory(destination.id, categoryId)" :key="serviceKey"
-                            class="group relative cursor-pointer transition-all duration-700 ease-out hover:scale-102">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                        <article v-for="serviceKey in getServicesByCategory(destination.id, categoryId)"
+                            :key="serviceKey"
+                            class="group relative cursor-pointer transition-all duration-700 ease-out hover:scale-102 focus-within:scale-102"
+                            :aria-label="$t(serviceKey)" tabindex="0" role="button" @keydown.enter="contactConcierge"
+                            @keydown.space="contactConcierge">
+
                             <!-- Service Card -->
-                            <div class="relative h-80 overflow-hidden rounded-xl bg-black/40">
+                            <div
+                                class="relative h-96 lg:h-80 xl:h-96 overflow-hidden rounded-2xl bg-black/40 backdrop-blur-sm">
                                 <!-- Background Video -->
                                 <div class="absolute inset-0">
                                     <video :src="getServiceVideo(serviceKey)"
-                                        class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110"
-                                        autoplay muted loop playsinline preload="metadata">
+                                        class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 group-focus-within:scale-110"
+                                        autoplay muted loop playsinline preload="metadata" :aria-hidden="true">
                                     </video>
 
                                     <!-- Gradient overlay -->
                                     <div
-                                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent">
+                                        class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
                                     </div>
 
-                                    <!-- Hover overlay -->
+                                    <!-- Glassmorphism hover overlay -->
                                     <div
-                                        class="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-700 group-hover:opacity-100">
+                                        class="absolute inset-0 bg-white/5 backdrop-blur-sm opacity-0 transition-all duration-700 group-hover:opacity-100 group-focus-within:opacity-100">
                                     </div>
                                 </div>
 
-                                <!-- Architectural frame -->
+                                <!-- Architectural frame with expanding corners -->
                                 <div
-                                    class="absolute inset-0 border border-white/20 rounded-xl transition-all duration-700 group-hover:border-white/40">
-                                    <!-- Expanding corners -->
+                                    class="absolute inset-0 border border-white/20 rounded-2xl transition-all duration-700 group-hover:border-white/40 group-focus-within:border-white/40">
+                                    <!-- Top-left corner -->
                                     <div
-                                        class="absolute -top-px -left-px w-3 h-3 border-l-2 border-t-2 border-white/30 transition-all duration-500 group-hover:border-white/70 group-hover:w-5 group-hover:h-5 rounded-tl-xl">
+                                        class="absolute -top-px -left-px w-4 h-4 border-l-2 border-t-2 border-white/30 transition-all duration-500 group-hover:border-white/70 group-hover:w-6 group-hover:h-6 group-focus-within:border-white/70 group-focus-within:w-6 group-focus-within:h-6 rounded-tl-2xl">
                                     </div>
+                                    <!-- Top-right corner -->
                                     <div
-                                        class="absolute -top-px -right-px w-3 h-3 border-r-2 border-t-2 border-white/30 transition-all duration-500 group-hover:border-white/70 group-hover:w-5 group-hover:h-5 rounded-tr-xl">
+                                        class="absolute -top-px -right-px w-4 h-4 border-r-2 border-t-2 border-white/30 transition-all duration-500 group-hover:border-white/70 group-hover:w-6 group-hover:h-6 group-focus-within:border-white/70 group-focus-within:w-6 group-focus-within:h-6 rounded-tr-2xl">
                                     </div>
+                                    <!-- Bottom-left corner -->
                                     <div
-                                        class="absolute -bottom-px -left-px w-3 h-3 border-l-2 border-b-2 border-white/30 transition-all duration-500 group-hover:border-white/70 group-hover:w-5 group-hover:h-5 rounded-bl-xl">
+                                        class="absolute -bottom-px -left-px w-4 h-4 border-l-2 border-b-2 border-white/30 transition-all duration-500 group-hover:border-white/70 group-hover:w-6 group-hover:h-6 group-focus-within:border-white/70 group-focus-within:w-6 group-focus-within:h-6 rounded-bl-2xl">
                                     </div>
+                                    <!-- Bottom-right corner -->
                                     <div
-                                        class="absolute -bottom-px -right-px w-3 h-3 border-r-2 border-b-2 border-white/30 transition-all duration-500 group-hover:border-white/70 group-hover:w-5 group-hover:h-5 rounded-br-xl">
+                                        class="absolute -bottom-px -right-px w-4 h-4 border-r-2 border-b-2 border-white/30 transition-all duration-500 group-hover:border-white/70 group-hover:w-6 group-hover:h-6 group-focus-within:border-white/70 group-focus-within:w-6 group-focus-within:h-6 rounded-br-2xl">
                                     </div>
                                 </div>
 
-                                <!-- Content -->
-                                <div class="absolute bottom-0 left-0 right-0 p-6">
-                                    <!-- Service category tag -->
-                                    <div
-                                        class="mb-2 opacity-0 transition-all duration-500 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0">
-                                        <span
-                                            class="inline-block px-2 py-1 bg-white/20 backdrop-blur-sm rounded text-white/90 text-xs font-inter font-medium uppercase tracking-wide">
-                                            {{ $t(`categories.${categoryId}`) }}
-                                        </span>
+                                <!-- Content Container -->
+                                <div class="absolute inset-0 flex flex-col justify-between p-6 lg:p-8">
+                                    <!-- Top section - Category badge -->
+                                    <div class="flex justify-start">
+                                        <div
+                                            class="transform transition-all duration-500 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100">
+                                            <span
+                                                class="inline-flex items-center px-3 py-1.5 bg-white/20 backdrop-blur-md rounded-full text-white/90 text-xs font-inter font-medium uppercase tracking-widest border border-white/20">
+                                                <div class="w-2 h-2 rounded-full mr-2"
+                                                    :class="getCategoryColor(categoryId)"></div>
+                                                {{ $t(`categories.${categoryId}`) }}
+                                            </span>
+                                        </div>
                                     </div>
 
-                                    <!-- Service name -->
-                                    <h4
-                                        class="font-playfair font-light text-xl md:text-2xl text-white mb-2 tracking-wide">
-                                        {{ $t(serviceKey) }}
-                                    </h4>
+                                    <!-- Bottom section - Service info -->
+                                    <div class="space-y-4">
+                                        <!-- Service name -->
+                                        <h3
+                                            class="font-playfair font-light text-2xl lg:text-3xl text-white leading-tight tracking-wide">
+                                            {{ $t(serviceKey) }}
+                                        </h3>
 
-                                    <!-- Arrow indicator -->
-                                    <div class="flex items-center justify-end mt-4">
-                                        <div
-                                            class="opacity-0 transition-all duration-500 group-hover:opacity-80 transform translate-x-0 group-hover:translate-x-1">
-                                            <Icon name="lucide:arrow-right" class="w-4 h-4 text-white" />
+                                        <!-- Service description -->
+                                        <p
+                                            class="font-inter font-light text-sm lg:text-base text-white/80 leading-relaxed line-clamp-2 transition-all duration-500 opacity-70 group-hover:opacity-100 group-focus-within:opacity-100">
+                                            {{ getServiceDescription(serviceKey, categoryId) }}
+                                        </p>
+
+                                        <!-- Action indicator -->
+                                        <div class="flex items-center justify-between">
+                                            <!-- Explore label -->
+                                            <div
+                                                class="transform transition-all duration-500 translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-80 group-focus-within:translate-x-0 group-focus-within:opacity-80">
+                                                <span
+                                                    class="font-inter font-medium text-xs text-white/60 uppercase tracking-widest">
+                                                    {{ $t('common.touchToExplore') }}
+                                                </span>
+                                            </div>
+
+                                            <!-- Arrow icon -->
+                                            <div
+                                                class="transform transition-all duration-500 translate-x-0 opacity-60 group-hover:translate-x-1 group-hover:opacity-100 group-focus-within:translate-x-1 group-focus-within:opacity-100">
+                                                <div
+                                                    class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20">
+                                                    <Icon name="lucide:arrow-right" class="w-4 h-4 text-white" />
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Shine effect -->
                                 <div
-                                    class="absolute top-0 left-0 h-px w-0 bg-gradient-to-r from-transparent via-white/50 to-transparent transition-all duration-1000 group-hover:w-full rounded-t-xl">
+                                    class="absolute top-0 left-0 h-px w-0 bg-gradient-to-r from-transparent via-white/60 to-transparent transition-all duration-1000 group-hover:w-full group-focus-within:w-full rounded-t-2xl">
+                                </div>
+
+                                <!-- Pulse effect on focus -->
+                                <div
+                                    class="absolute inset-0 rounded-2xl border border-white/20 animate-pulse opacity-0 group-focus-within:opacity-30 transition-opacity duration-300">
                                 </div>
                             </div>
-                        </div>
+                        </article>
                     </div>
                 </div>
 
@@ -308,6 +361,22 @@ const getServiceVideo = (serviceKey) => {
     }
 
     return videoMap[serviceType] || '/videos/service-placeholder.mp4'
+}
+
+// Get service description
+const getServiceDescription = (serviceKey, categoryId) => {
+    const serviceType = serviceKey.split('.').pop()
+    const descriptionKey = `services.descriptions.${categoryId}.${serviceType}`
+
+    // Vérifier si la clé existe avant de la traduire
+    const description = t(descriptionKey)
+
+    // Si la traduction retourne la clé elle-même, cela signifie qu'elle n'existe pas
+    if (description === descriptionKey) {
+        return t('common.touchToExplore') // Fallback
+    }
+
+    return description
 }
 
 // Get category color class
@@ -443,9 +512,17 @@ useHead({
     .animate-fade-in,
     .animate-fade-in-up,
     .animate-fade-in-up-delay,
-    .animate-scroll-float {
+    .animate-scroll-float,
+    .animate-pulse,
+    .animate-ping {
         animation: none;
         opacity: 1;
+        transform: none;
+    }
+
+    .group:hover .group-hover\:scale-102,
+    .group:hover .group-hover\:scale-105,
+    .group:hover .group-hover\:scale-110 {
         transform: none;
     }
 }

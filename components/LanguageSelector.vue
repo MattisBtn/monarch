@@ -49,7 +49,6 @@ const toggleMenu = () => {
 const changeLanguage = async (langCode) => {
     await setLocale(langCode)
     showMenu.value = false
-    console.log('Langue changée:', langCode)
 }
 
 // Utilisation de VueUse pour gérer le click outside

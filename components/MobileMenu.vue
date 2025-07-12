@@ -155,7 +155,7 @@
                                     <div class="relative p-6 text-center">
                                         <h3 class="font-inter font-medium text-white/90 text-lg mb-4">{{
                                             $t('menu.language')
-                                        }}</h3>
+                                            }}</h3>
                                         <div class="flex justify-center gap-3">
                                             <button v-for="lang in languages" :key="lang.code"
                                                 @click="changeLanguage(lang.code)"
@@ -243,7 +243,6 @@ const navigateToDestination = (destinationId: string) => {
 
 const changeLanguage = async (langCode: string) => {
     await setLocale(langCode as 'fr' | 'en' | 'es')
-    console.log('Langue changée:', langCode)
 }
 
 const handleContact = () => {

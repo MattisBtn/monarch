@@ -26,7 +26,12 @@
       "title": "Destinations d'exception",
       "subtitle": "Explorez nos destinations exclusives où luxe et raffinement se rencontrent pour créer des expériences inoubliables",
       "viewAll": "Découvrir toutes les destinations",
-      "contactUs": "Nous contacter"
+      "contactUs": "Nous contacter",
+      "comingSoon": {
+        "title": "Bientôt disponibles",
+        "subtitle": "De nouvelles destinations exclusives arrivent prochainement",
+        "badge": "Bientôt"
+      }
     }
   },
   "menu": {
@@ -107,6 +112,58 @@
         "Statue de la Liberté"
       ],
       "best_season": "Printemps et Automne - Quatre saisons distinctes"
+    },
+    "marbella": {
+      "name": "Marbella",
+      "description": "Paradis méditerranéen où luxe espagnol et glamour se rencontrent",
+      "tagline": "Glamour Méditerranéen & Luxe Espagnol",
+      "atmosphere": "Élégance méditerranéenne avec une touche d'exclusivité",
+      "highlights": [
+        "Puerto Banús",
+        "Plages dorées",
+        "Montagnes andalouses",
+        "Vie nocturne exclusive"
+      ],
+      "best_season": "Avril à Octobre - Climat méditerranéen idéal"
+    },
+    "paris": {
+      "name": "Paris",
+      "description": "Capitale de l'élégance où art, gastronomie et luxe se subliment",
+      "tagline": "Art de Vivre & Élégance Française",
+      "atmosphere": "Raffinement parisien avec un charme intemporel",
+      "highlights": [
+        "Champs-Élysées",
+        "Tour Eiffel",
+        "Quartier Saint-Germain",
+        "Gastronomie d'exception"
+      ],
+      "best_season": "Avril à Octobre - Saisons douces et lumineuses"
+    },
+    "cannes": {
+      "name": "Cannes",
+      "description": "Capitale du cinéma où prestige et glamour rivalisent avec la Méditerranée",
+      "tagline": "Prestige Cinématographique & Riviera Française",
+      "atmosphere": "Glamour international avec une élégance à la française",
+      "highlights": [
+        "La Croisette",
+        "Palais des Festivals",
+        "Îles de Lérins",
+        "Boutiques de luxe"
+      ],
+      "best_season": "Mai à Septembre - Saison des festivals"
+    },
+    "saint_tropez": {
+      "name": "Saint-Tropez",
+      "description": "Village mythique où tradition provençale et jet-set mondial se rencontrent",
+      "tagline": "Tradition Provençale & Jet-Set International",
+      "atmosphere": "Charme méditerranéen avec une énergie cosmopolite",
+      "highlights": [
+        "Vieux Port",
+        "Plage de Pampelonne",
+        "Village provençal",
+        "Clubs exclusifs"
+      ],
+      "best_season": "Juin à Septembre - Été méditerranéen"
     }
   },
   "categories": {
@@ -141,6 +198,35 @@
       "yacht_party": "Soirée yacht",
       "beach_club": "Beach Club",
       "rooftop_party": "Soirée Rooftop"
+    },
+    "descriptions": {
+      "locations": {
+        "luxury_villa": "Résidences privées d'exception avec vues imprenables",
+        "supercar": "Voitures de sport iconiques pour des trajets inoubliables",
+        "private_yacht": "Expériences de navigation exclusive sur eaux cristallines",
+        "private_jet": "Aviation privée pour le confort et l'intimité absolus",
+        "luxury_limousine": "Transport élégant avec service impeccable",
+        "private_helicopter": "Aventures aériennes avec vues panoramiques",
+        "luxury_vehicle": "Véhicules premium pour voyages sophistiqués",
+        "manhattan_penthouse": "Penthouses prestigieux au cœur de Manhattan",
+        "luxury_van": "Transport de luxe spacieux pour expériences de groupe"
+      },
+      "activities": {
+        "yacht_experience": "Aventures nautiques sur les plus belles eaux",
+        "supercar_experience": "Sensations adrénalines dans véhicules légendaires",
+        "helicopter_tour": "Tours aériens époustouflants des sites iconiques",
+        "limousine_tour": "Visites luxueuses de ville avec traitement VIP",
+        "jet_ski": "Sports nautiques palpitants pour sensations ultimes",
+        "manhattan_tour": "Découverte exclusive des joyaux cachés de New York"
+      },
+      "events": {
+        "nightclub": "Accès exclusif aux lieux les plus prestigieux",
+        "restaurant": "Expériences culinaires dans établissements renommés",
+        "house_party": "Célébrations privées dans cadres extraordinaires",
+        "yacht_party": "Événements mémorables sur l'eau",
+        "beach_club": "Détente et divertissement au bord de l'océan",
+        "rooftop_party": "Événements spectaculaires avec vues sur skyline"
+      }
     }
   },
   "common": {

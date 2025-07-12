@@ -31,6 +31,7 @@ export interface Destination {
   bestSeasonKey: string;
   timeZone: string;
   unsplashKeywords: string[];
+  isComingSoon?: boolean;
 }
 
 // Categories de services de la conciergerie

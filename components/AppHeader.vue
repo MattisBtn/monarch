@@ -153,7 +153,6 @@ const toggleMobileMenu = () => {
     mobileMenuOpen.value = !mobileMenuOpen.value
     // Fermer le menu langue si ouvert
     showMobileLanguageMenu.value = false
-    console.log('Toggle mobile menu:', mobileMenuOpen.value)
 }
 
 const closeMobileMenu = () => {
@@ -169,7 +168,6 @@ const toggleLanguageMenu = () => {
 const changeMobileLanguage = async (langCode: string) => {
     await setLocale(langCode as 'fr' | 'en' | 'es')
     showMobileLanguageMenu.value = false
-    console.log('Langue changée:', langCode)
 }
 
 // Utilisation de VueUse pour gérer le click outside du language menu mobile

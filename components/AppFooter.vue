@@ -58,7 +58,7 @@
                             <div class="flex items-center gap-3">
                                 <div class="w-1 h-1 bg-white/40 rounded-full"></div>
                                 <span class="font-inter text-white/80 text-sm">{{ $t('footer.contact.availability')
-                                    }}</span>
+                                }}</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <div class="w-1 h-1 bg-white/40 rounded-full"></div>
@@ -145,7 +145,6 @@ const languages = computed(() => locales.value.map(l => ({
 
 const changeLanguage = async (langCode) => {
     await setLocale(langCode)
-    console.log('Langue changée:', langCode)
 }
 
 const scrollToDestinations = () => {
