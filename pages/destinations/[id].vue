@@ -42,7 +42,7 @@
                     <div class="flex flex-wrap items-center justify-center gap-8 mb-8 animate-fade-in-up-delay">
                         <div class="text-center">
                             <div class="text-white text-3xl font-playfair font-light">{{ getTotalServices(destination)
-                            }}
+                                }}
                             </div>
                             <div class="text-white/70 text-sm font-inter uppercase tracking-wide">{{
                                 $t('destinations.services') }}</div>
@@ -209,27 +209,6 @@
                                             class="font-inter font-light text-sm lg:text-base text-white/80 leading-relaxed line-clamp-2 transition-all duration-500 opacity-70 group-hover:opacity-100 group-focus-within:opacity-100">
                                             {{ getServiceDescription(serviceKey, categoryId) }}
                                         </p>
-
-                                        <!-- Action indicator -->
-                                        <div class="flex items-center justify-between">
-                                            <!-- Explore label -->
-                                            <div
-                                                class="transform transition-all duration-500 translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-80 group-focus-within:translate-x-0 group-focus-within:opacity-80">
-                                                <span
-                                                    class="font-inter font-medium text-xs text-white/60 uppercase tracking-widest">
-                                                    {{ $t('common.touchToExplore') }}
-                                                </span>
-                                            </div>
-
-                                            <!-- Arrow icon -->
-                                            <div
-                                                class="transform transition-all duration-500 translate-x-0 opacity-60 group-hover:translate-x-1 group-hover:opacity-100 group-focus-within:translate-x-1 group-focus-within:opacity-100">
-                                                <div
-                                                    class="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20">
-                                                    <Icon name="lucide:arrow-right" class="w-4 h-4 text-white" />
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
 
