@@ -51,24 +51,24 @@
                     class="mb-2 opacity-0 transition-all duration-500 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0">
                     <span
                         class="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white/90 text-xs font-inter font-medium tracking-wide uppercase">
-                        {{ translatedDestination.tagline }}
+                        {{ t(destination.taglineKey) }}
                     </span>
                 </div>
 
                 <!-- Destination name -->
                 <h3 class="font-playfair font-light text-3xl md:text-4xl text-white mb-3 tracking-wide">
-                    {{ translatedDestination.name }}
+                    {{ t(destination.nameKey) }}
                 </h3>
 
                 <!-- Description -->
                 <p class="font-inter text-white/80 text-base md:text-lg mb-4 line-clamp-2">
-                    {{ translatedDestination.description }}
+                    {{ t(destination.descriptionKey) }}
                 </p>
 
                 <!-- Highlights -->
                 <div
                     class="flex flex-wrap gap-2 mb-4 opacity-0 transition-all duration-700 delay-200 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0">
-                    <span v-for="highlight in translatedDestination.highlights.slice(0, 3)" :key="highlight"
+                    <span v-for="highlight in t(destination.highlightsKey).slice(0, 3)" :key="highlight"
                         class="inline-block px-2 py-1 bg-white/10 backdrop-blur-sm rounded text-white/70 text-xs font-inter">
                         {{ highlight }}
                     </span>
@@ -81,7 +81,7 @@
                         <div class="flex items-center gap-2">
                             <Icon name="lucide:star" class="w-4 h-4 text-white/60" />
                             <span class="text-white/80 text-sm font-inter">
-                                {{ destination.services.length }} {{ t('destinations.services') }}
+                                {{ totalServices }} {{ t('destinations.services') }}
                             </span>
                         </div>
 
@@ -104,7 +104,7 @@
             <div class="absolute top-6 right-6 opacity-0 transition-all duration-500 group-hover:opacity-100">
                 <div class="px-3 py-2 bg-white/10 backdrop-blur-md rounded-lg border border-white/20">
                     <span class="text-white/90 text-xs font-inter font-medium">
-                        {{ translatedDestination.timeZone }}
+                        {{ getCurrentTime(destination.timeZone) }}
                     </span>
                 </div>
             </div>
@@ -113,8 +113,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Destination } from '~/types'
-import { serviceCategories } from '~/types'
+import type { Destination } from '~/types';
 
 interface Props {
     destination: Destination
@@ -130,6 +129,7 @@ defineEmits<Emits>()
 
 const { t } = useI18n()
 const { getTranslatedDestination } = useDestinations()
+const { getCurrentTime } = useRealTime()
 
 // Traduire la destination
 const translatedDestination = computed(() => {
@@ -142,17 +142,28 @@ const heroImageUrl = computed(() => {
     return `https://images.unsplash.com/1200x800/?${keywords}`
 })
 
+// Get total number of services for this destination
+const totalServices = computed(() => {
+    const services = props.destination.services
+    return (services.locations?.length || 0) +
+        (services.activities?.length || 0) +
+        (services.events?.length || 0)
+})
+
 // Get unique service categories for this destination
 const uniqueCategories = computed(() => {
-    const categories = [...new Set(props.destination.services.map(service => service.categoryId))]
+    const services = props.destination.services
+    const categories: string[] = []
+
+    if (services.locations?.length > 0) categories.push('locations')
+    if (services.activities?.length > 0) categories.push('activities')
+    if (services.events?.length > 0) categories.push('events')
+
     return categories
 })
 
 // Get category color class
 const getCategoryColor = (categoryId: string) => {
-    const category = serviceCategories.find(cat => cat.id === categoryId)
-    if (!category) return 'bg-gray-400'
-
     switch (categoryId) {
         case 'locations':
             return 'bg-amber-500'

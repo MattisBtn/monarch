@@ -140,7 +140,7 @@
                             class="absolute top-6 right-6 opacity-0 transition-all duration-500 group-hover:opacity-100">
                             <div class="px-3 py-2 bg-white/10 backdrop-blur-md rounded-lg border border-white/20">
                                 <span class="text-white/90 text-xs font-inter font-medium">
-                                    {{ destination.timeZone }}
+                                    {{ getCurrentTime(destination.timeZone) }}
                                 </span>
                             </div>
                         </div>
@@ -220,6 +220,10 @@
                                     <span class="text-white/60 text-xs font-inter">
                                         {{ getTotalServices(destination) }} {{ $t('destinations.services') }}
                                     </span>
+                                    <span class="text-white/40 text-xs mx-2">•</span>
+                                    <span class="text-white/60 text-xs font-inter">
+                                        {{ getCurrentTime(destination.timeZone) }}
+                                    </span>
                                 </div>
                             </div>
 
@@ -273,6 +277,7 @@ import { comingSoonDestinations, getUniqueCategories as getDestinationCategories
 
 const { t } = useI18n()
 const { openWhatsApp } = useWhatsApp()
+const { getCurrentTime } = useRealTime()
 
 // Utiliser le composable pour les destinations traduites
 const { getTranslatedDestinations } = useDestinations()

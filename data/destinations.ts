@@ -20,6 +20,7 @@ const destinationServices = {
       "services.locations.private_jet",
       "services.locations.private_chef",
     ],
+    activities: [],
     events: [
       "services.events.nightclub",
       "services.events.restaurant",
@@ -32,6 +33,7 @@ const destinationServices = {
       "services.locations.luxury_limousine",
       "services.locations.private_helicopter",
     ],
+    activities: [],
     events: [
       "services.events.nightclub",
       "services.events.restaurant",
@@ -62,6 +64,7 @@ const destinationServices = {
       "services.locations.private_chauffeur",
       "services.locations.private_chef",
     ],
+    activities: [],
     events: ["services.events.nightclub", "services.events.restaurant"],
   },
   // Services pour les destinations à venir
@@ -71,6 +74,7 @@ const destinationServices = {
       "services.locations.supercar",
       "services.locations.private_yacht",
     ],
+    activities: [],
     events: [
       "services.events.nightclub",
       "services.events.restaurant",
@@ -83,6 +87,7 @@ const destinationServices = {
       "services.locations.luxury_vehicle",
       "services.locations.private_helicopter",
     ],
+    activities: [],
     events: ["services.events.nightclub", "services.events.restaurant"],
   },
   cannes: {
@@ -91,6 +96,7 @@ const destinationServices = {
       "services.locations.private_yacht",
       "services.locations.luxury_vehicle",
     ],
+    activities: [],
     events: [
       "services.events.yacht_party",
       "services.events.restaurant",
@@ -103,6 +109,7 @@ const destinationServices = {
       "services.locations.private_yacht",
       "services.locations.supercar",
     ],
+    activities: [],
     events: [
       "services.events.yacht_party",
       "services.events.beach_club",
@@ -130,7 +137,7 @@ export const destinations: Destination[] = [
     atmosphereKey: "destinations.los_angeles.atmosphere",
     highlightsKey: "destinations.los_angeles.highlights",
     bestSeasonKey: "destinations.los_angeles.best_season",
-    timeZone: "PST (UTC-8)",
+    timeZone: "America/Los_Angeles",
     unsplashKeywords: [
       "los-angeles",
       "hollywood",
@@ -151,7 +158,7 @@ export const destinations: Destination[] = [
     atmosphereKey: "destinations.las_vegas.atmosphere",
     highlightsKey: "destinations.las_vegas.highlights",
     bestSeasonKey: "destinations.las_vegas.best_season",
-    timeZone: "PST (UTC-8)",
+    timeZone: "America/Los_Angeles",
     unsplashKeywords: ["las-vegas", "strip", "casino", "neon", "desert"],
   },
   {
@@ -166,7 +173,7 @@ export const destinations: Destination[] = [
     atmosphereKey: "destinations.miami.atmosphere",
     highlightsKey: "destinations.miami.highlights",
     bestSeasonKey: "destinations.miami.best_season",
-    timeZone: "EST (UTC-5)",
+    timeZone: "America/New_York",
     unsplashKeywords: [
       "miami",
       "south-beach",
@@ -192,7 +199,7 @@ export const destinations: Destination[] = [
     atmosphereKey: "destinations.new_york.atmosphere",
     highlightsKey: "destinations.new_york.highlights",
     bestSeasonKey: "destinations.new_york.best_season",
-    timeZone: "EST (UTC-5)",
+    timeZone: "America/New_York",
     unsplashKeywords: [
       "new-york",
       "manhattan",
@@ -222,7 +229,7 @@ export const comingSoonDestinations: Destination[] = [
     atmosphereKey: "destinations.marbella.atmosphere",
     highlightsKey: "destinations.marbella.highlights",
     bestSeasonKey: "destinations.marbella.best_season",
-    timeZone: "CET (UTC+1)",
+    timeZone: "Europe/Madrid",
     unsplashKeywords: [
       "marbella",
       "puerto-banus",
@@ -249,7 +256,7 @@ export const comingSoonDestinations: Destination[] = [
     atmosphereKey: "destinations.paris.atmosphere",
     highlightsKey: "destinations.paris.highlights",
     bestSeasonKey: "destinations.paris.best_season",
-    timeZone: "CET (UTC+1)",
+    timeZone: "Europe/Paris",
     unsplashKeywords: [
       "paris",
       "eiffel-tower",
@@ -271,7 +278,7 @@ export const comingSoonDestinations: Destination[] = [
     atmosphereKey: "destinations.cannes.atmosphere",
     highlightsKey: "destinations.cannes.highlights",
     bestSeasonKey: "destinations.cannes.best_season",
-    timeZone: "CET (UTC+1)",
+    timeZone: "Europe/Paris",
     unsplashKeywords: [
       "cannes",
       "croisette",
@@ -293,7 +300,7 @@ export const comingSoonDestinations: Destination[] = [
     atmosphereKey: "destinations.saint_tropez.atmosphere",
     highlightsKey: "destinations.saint_tropez.highlights",
     bestSeasonKey: "destinations.saint_tropez.best_season",
-    timeZone: "CET (UTC+1)",
+    timeZone: "Europe/Paris",
     unsplashKeywords: ["saint-tropez", "luxury", "riviera", "yacht", "france"],
     isComingSoon: true,
   },
