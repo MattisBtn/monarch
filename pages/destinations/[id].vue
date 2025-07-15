@@ -342,7 +342,8 @@ const getServiceVideo = (serviceKey) => {
         'luxury_vehicle': '/videos/luxury_car.mp4',
         'manhattan_penthouse': '/videos/penthouse.mp4',
         'luxury_van': '/videos/luxury_van.mp4',
-
+        'private_chauffeur': '/videos/private_chauffeur.mp4',
+        'private_chef': '/videos/private_chef.mp4',
         // Activities
         'yacht_experience': '/videos/yacht.mp4',
         'supercar_experience': '/videos/luxury_car.mp4',

@@ -167,7 +167,7 @@
     }
   },
   "categories": {
-    "locations": "Lieux d'exception",
+    "locations": "Lieux et services d'exception",
     "activities": "Activités extrêmes",
     "events": "Événements privés"
   },
@@ -181,7 +181,9 @@
       "private_helicopter": "Hélicoptère privé",
       "luxury_vehicle": "Véhicule de luxe",
       "manhattan_penthouse": "Penthouse Manhattan",
-      "luxury_van": "Van de luxe"
+      "luxury_van": "Van de luxe",
+      "private_chauffeur": "Chauffeur privé",
+      "private_chef": "Chef privé"
     },
     "activities": {
       "yacht_experience": "Expérience yacht",
@@ -195,9 +197,9 @@
       "nightclub": "Nightclub",
       "restaurant": "Restaurant",
       "house_party": "House party",
-      "yacht_party": "Soirée yacht",
+      "yacht_party": "Yacht Party",
       "beach_club": "Beach Club",
-      "rooftop_party": "Soirée Rooftop"
+      "rooftop_party": "Rooftop Party"
     },
     "descriptions": {
       "locations": {
@@ -209,7 +211,9 @@
         "private_helicopter": "Aventures aériennes avec vues panoramiques",
         "luxury_vehicle": "Véhicules premium pour voyages sophistiqués",
         "manhattan_penthouse": "Penthouses prestigieux au cœur de Manhattan",
-        "luxury_van": "Transport de luxe spacieux pour expériences de groupe"
+        "luxury_van": "Transport de luxe spacieux pour expériences de groupe",
+        "private_chauffeur": "Transport en voiture de luxe avec chauffeur privé",
+        "private_chef": "Service de chef privé à domicile"
       },
       "activities": {
         "yacht_experience": "Aventures nautiques sur les plus belles eaux",

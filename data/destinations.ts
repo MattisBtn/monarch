@@ -18,11 +18,13 @@ const destinationServices = {
       "services.locations.supercar",
       "services.locations.private_yacht",
       "services.locations.private_jet",
+      "services.locations.private_chef",
     ],
     events: [
       "services.events.nightclub",
       "services.events.restaurant",
       "services.events.yacht_party",
+      "services.events.house_party",
     ],
   },
   "las-vegas": {
@@ -42,12 +44,14 @@ const destinationServices = {
       "services.locations.luxury_vehicle",
       "services.locations.private_yacht",
       "services.locations.private_jet",
+      "services.locations.private_chef",
     ],
     activities: ["services.activities.jet_ski"],
     events: [
       "services.events.nightclub",
       "services.events.restaurant",
       "services.events.yacht_party",
+      "services.events.house_party",
     ],
   },
   "new-york": {
@@ -55,6 +59,8 @@ const destinationServices = {
       "services.locations.manhattan_penthouse",
       "services.locations.luxury_van",
       "services.locations.private_helicopter",
+      "services.locations.private_chauffeur",
+      "services.locations.private_chef",
     ],
     events: ["services.events.nightclub", "services.events.restaurant"],
   },
