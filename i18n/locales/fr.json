@@ -300,5 +300,41 @@
       "global": "Réseau de conciergerie mondial"
     },
     "copyright": "Monarch. Tous droits réservés."
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "subtitle": "Découvrez tout ce que vous devez savoir sur nos services de conciergerie de luxe",
+    "stillHaveQuestions": "Vous avez d'autres questions ?",
+    "contactUs": "Contactez-nous",
+    "questions": {
+      "howItWorks": {
+        "question": "Comment fonctionne votre service de conciergerie ?",
+        "answer": "Notre équipe de concierges experts analyse vos besoins et préférences pour créer des expériences sur mesure. De la planification initiale à l'exécution parfaite, nous orchestrons chaque détail pour garantir une expérience exceptionnelle. Contactez-nous et décrivez vos souhaits, nous nous occupons du reste."
+      },
+      "destinations": {
+        "question": "Dans quelles destinations opérez-vous ?",
+        "answer": "Nous opérons actuellement à Los Angeles, Las Vegas, Miami et New York, avec bientôt Marbella, Paris, Cannes et Saint-Tropez. Notre réseau mondial de partenaires premium nous permet également d'organiser des expériences dans la plupart des destinations de luxe internationales."
+      },
+      "bookingTime": {
+        "question": "Quel est le délai minimum pour organiser une demande ?",
+        "answer": "Pour les expériences standard, nous recommandons un préavis de 48 heures. Pour les demandes complexes comme les jets privés ou les événements exclusifs, un délai de 5-7 jours est préférable. Cependant, notre équipe peut souvent accommoder des demandes en urgence moyennant des frais additionnels."
+      },
+      "availability": {
+        "question": "Proposez-vous vraiment un service 24h/24 et 7j/7 ?",
+        "answer": "Absolument. Notre équipe de concierges est disponible 24h/24 et 7j/7 dans toutes nos destinations. Que vous ayez besoin d'une réservation de dernière minute à 3h du matin ou d'une assistance d'urgence pendant vos vacances, nous sommes toujours là pour vous."
+      },
+      "pricing": {
+        "question": "Comment sont calculés vos tarifs ?",
+        "answer": "Nos tarifs dépendent de la complexité de la demande, de la destination et du niveau de service requis. Nous proposons des packages personnalisés et des tarifs transparents sans frais cachés. Contactez-nous pour obtenir un devis gratuit et détaillé adapté à vos besoins spécifiques."
+      },
+      "cancellation": {
+        "question": "Peut-on annuler ou modifier une réservation ?",
+        "answer": "Nos politiques d'annulation varient selon le type de service et les termes de nos partenaires. Nous offrons généralement une flexibilité maximale avec des options d'annulation et de modification jusqu'à 48 heures avant le service, sous réserve des conditions spécifiques de chaque prestation."
+      },
+      "experiences": {
+        "question": "Quels types d'expériences pouvez-vous organiser ?",
+        "answer": "Nous orchestrons tout : location de villas d'exception, yachts privés, jets privés, voitures de luxe, expériences gastronomiques exclusives, accès VIP aux événements, services de majordome, organisation d'événements privés, et bien plus. Si vous pouvez l'imaginer, nous pouvons le réaliser."
+      }
+    }
   }
 }

@@ -12,6 +12,9 @@
         <!-- About Section -->
         <AboutSection />
 
+        <!-- FAQ Section -->
+        <FAQSection />
+
         <!-- CTA Section -->
         <CTASection />
 

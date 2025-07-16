@@ -326,5 +326,41 @@
       "global": "Red global de conserjería"
     },
     "copyright": "Monarch. Todos los derechos reservados."
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "subtitle": "Descubre todo lo que necesitas saber sobre nuestros servicios de conserjería de lujo",
+    "stillHaveQuestions": "¿Aún tienes preguntas?",
+    "contactUs": "Contáctanos",
+    "questions": {
+      "howItWorks": {
+        "question": "¿Cómo funciona su servicio de conserjería?",
+        "answer": "Nuestro equipo de conserjes expertos analiza sus necesidades y preferencias para crear experiencias a medida. Desde la planificación inicial hasta la ejecución perfecta, orquestamos cada detalle para garantizar una experiencia excepcional. Contáctenos y describa sus deseos, nosotros nos encargamos del resto."
+      },
+      "destinations": {
+        "question": "¿En qué destinos operan?",
+        "answer": "Actualmente operamos en Los Ángeles, Las Vegas, Miami y Nueva York, con Marbella, París, Cannes y Saint-Tropez próximamente. Nuestra red global de socios premium también nos permite organizar experiencias en la mayoría de destinos de lujo internacionales."
+      },
+      "bookingTime": {
+        "question": "¿Cuál es el tiempo mínimo para organizar una solicitud?",
+        "answer": "Para experiencias estándar, recomendamos un aviso de 48 horas. Para solicitudes complejas como jets privados o eventos exclusivos, un plazo de 5-7 días es preferible. Sin embargo, nuestro equipo puede a menudo acomodar solicitudes urgentes por tarifas adicionales."
+      },
+      "availability": {
+        "question": "¿Realmente ofrecen servicio 24/7?",
+        "answer": "Absolutamente. Nuestro equipo de conserjes está disponible 24/7 en todos nuestros destinos. Ya sea que necesite una reserva de último minuto a las 3 AM o asistencia de emergencia durante sus vacaciones, siempre estamos aquí para usted."
+      },
+      "pricing": {
+        "question": "¿Cómo se calculan sus tarifas?",
+        "answer": "Nuestras tarifas dependen de la complejidad de la solicitud, el destino y el nivel de servicio requerido. Ofrecemos paquetes personalizados y precios transparentes sin tarifas ocultas. Contáctenos para obtener una cotización gratuita y detallada adaptada a sus necesidades específicas."
+      },
+      "cancellation": {
+        "question": "¿Se puede cancelar o modificar una reserva?",
+        "answer": "Nuestras políticas de cancelación varían según el tipo de servicio y los términos de nuestros socios. Generalmente ofrecemos máxima flexibilidad con opciones de cancelación y modificación hasta 48 horas antes del servicio, sujeto a condiciones específicas para cada prestación."
+      },
+      "experiences": {
+        "question": "¿Qué tipos de experiencias pueden organizar?",
+        "answer": "Orquestamos todo: alquiler de villas de lujo, yates privados, jets privados, autos de lujo, experiencias gastronómicas exclusivas, acceso VIP a eventos, servicios de mayordomo, organización de eventos privados, y mucho más. Si puede imaginarlo, podemos hacerlo realidad."
+      }
+    }
   }
 }

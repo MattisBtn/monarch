@@ -326,5 +326,41 @@
       "global": "Global concierge network"
     },
     "copyright": "Monarch. All rights reserved."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Discover everything you need to know about our luxury concierge services",
+    "stillHaveQuestions": "Still have questions?",
+    "contactUs": "Contact us",
+    "questions": {
+      "howItWorks": {
+        "question": "How does your concierge service work?",
+        "answer": "Our team of expert concierges analyzes your needs and preferences to create bespoke experiences. From initial planning to flawless execution, we orchestrate every detail to guarantee an exceptional experience. Contact us and describe your wishes, we take care of the rest."
+      },
+      "destinations": {
+        "question": "In which destinations do you operate?",
+        "answer": "We currently operate in Los Angeles, Las Vegas, Miami, and New York, with Marbella, Paris, Cannes, and Saint-Tropez coming soon. Our global network of premium partners also allows us to organize experiences in most international luxury destinations."
+      },
+      "bookingTime": {
+        "question": "What is the minimum lead time for organizing a request?",
+        "answer": "For standard experiences, we recommend 48 hours notice. For complex requests like private jets or exclusive events, a 5-7 day lead time is preferable. However, our team can often accommodate urgent requests for additional fees."
+      },
+      "availability": {
+        "question": "Do you really offer 24/7 service?",
+        "answer": "Absolutely. Our concierge team is available 24/7 in all our destinations. Whether you need a last-minute reservation at 3 AM or emergency assistance during your vacation, we are always there for you."
+      },
+      "pricing": {
+        "question": "How are your rates calculated?",
+        "answer": "Our rates depend on the complexity of the request, destination, and level of service required. We offer customized packages and transparent pricing with no hidden fees. Contact us for a free detailed quote tailored to your specific needs."
+      },
+      "cancellation": {
+        "question": "Can we cancel or modify a reservation?",
+        "answer": "Our cancellation policies vary depending on the type of service and our partners' terms. We generally offer maximum flexibility with cancellation and modification options up to 48 hours before the service, subject to specific conditions for each service."
+      },
+      "experiences": {
+        "question": "What types of experiences can you organize?",
+        "answer": "We orchestrate everything: luxury villa rentals, private yachts, private jets, luxury cars, exclusive gastronomic experiences, VIP event access, butler services, private event organization, and much more. If you can imagine it, we can make it happen."
+      }
+    }
   }
 }
