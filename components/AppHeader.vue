@@ -42,7 +42,7 @@
 
                     <!-- Logo avec effet de profondeur -->
                     <div class="relative z-10">
-                        <NuxtImg src="/images/logo.png" alt="Monarch Conciergerie"
+                        <NuxtImg src="/images/logo.jpg" alt="Monarch Conciergerie"
                             class="h-7 sm:h-8 lg:h-10 w-auto transition-all duration-500 ease-out group-hover:brightness-110 group-hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]"
                             loading="eager" />
                     </div>

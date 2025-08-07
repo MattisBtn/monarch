@@ -36,7 +36,7 @@
                                 </div>
 
                                 <div class="relative p-2">
-                                    <NuxtImg src="/images/logo.png" alt="Monarch"
+                                    <NuxtImg src="/images/logo.jpg" alt="Monarch"
                                         class="h-10 w-auto transition-all duration-300 group-hover:brightness-110"
                                         loading="lazy" />
                                 </div>

@@ -38,7 +38,7 @@
 
                     <!-- Logo with subtle glow -->
                     <div class="relative p-6 md:p-8">
-                        <NuxtImg src="/images/logo.png" alt="Monarch"
+                        <NuxtImg src="/images/logo.jpg" alt="Monarch"
                             class="h-16 md:h-20 w-auto mx-auto filter brightness-110" loading="lazy" />
 
                         <!-- Subtle aura -->
